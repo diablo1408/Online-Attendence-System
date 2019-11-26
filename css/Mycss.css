@@ -1,0 +1,22 @@
+.pdl-10{
+    padding-left: 10px; 
+}
+
+.mg-t-a {
+    margin: 20px;
+background-color: beige; }
+ .table-m{
+     margin-left: 10px;
+     margin-right: 10px;
+     margin-top: 10px;
+     background-color:gray;
+ }  
+ .center-a{
+     text-align: center;
+     font-size: large;
+ } 
+ .button-a{
+    text-align:center;
+    display:block;
+    margin: 10px;
+  }
