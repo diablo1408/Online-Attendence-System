@@ -28,7 +28,7 @@
     <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
     <meta name="author" content="ThemePixels">
 
-    <title>MYattend.-Attendence Sheet</title>
+    <title>MYattend.-Dashboard</title>
 
     <!-- vendor css -->
     <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -36,22 +36,18 @@
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
 
     <!-- azia CSS -->
-    <link rel="stylesheet" href="../css/azia.css">
-    <link rel="stylesheet" href="../css/Mycss.css">
- 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
+    <link rel="stylesheet" href="..\css\azia.css">
 
   </head>
   <body class="az-body az-light">
 
     <div class="az-iconbar">
-      <a href="Dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
+      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
       <nav class="nav">
         
-        <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
+        <a href="#asideDashboard " class="nav-link active"><i class="typcn typcn-device-laptop"></i></a>
        
-        <a href="#asideAppsPages" class="nav-link active"><i class="typcn typcn-folder-add"></i></a>
+        <a href="#asideAppsPages" class="nav-link"><i class="typcn typcn-folder-add"></i></a>
         <a href="#asideCharts" class="nav-link"><i class="typcn typcn-chart-line-outline"></i></a>
         
         <a href="#asideTables" class="nav-link"><i class="typcn typcn-th-large-outline"></i></a>
@@ -63,8 +59,7 @@
     </div><!-- az-iconbar -->
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
-       
-        <a href="Dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
+        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
         <a href="" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
@@ -73,16 +68,16 @@
       <div class="az-iconbar-body">
         <div id="asideDashboard" class="az-iconbar-pane">
           <h6 class="az-iconbar-title">Dashboard</h6>
-          <small class="az-iconbar-text">Choose between layouts to experience different look and feel for your projects.</small>
+          <!-- <small class="az-iconbar-text">Choose between layouts to experience different look and feel for your projects.</small> -->
 
-        
+          
         </div>
         <div id="asideAppsPages" class="az-iconbar-pane">
           <h6 class="az-iconbar-title">Attendence</h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="attendence_details.html" class="nav-link">Schedule Classes</a>
-            <a href="attendence_form.html" class="nav-link active">Take Attendence</a>
+            <a href="" class="nav-link">Schedule Classes</a>
+            <a href="attendence.html" class="nav-link">Take Attendence</a>
          
           </nav>
         </div><!-- az-iconbar-pane -->
@@ -102,7 +97,7 @@
           <div class="az-header-right">
             <!-- <div class="az-header-message">
               <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
-            </div><-- az-header-message -->
+            </div><-- az-header-message --> 
             <div class="dropdown az-header-notification">
               <a href="" class="new"><i class="typcn typcn-bell"></i></a>
               <div class="dropdown-menu">
@@ -170,83 +165,8 @@
       </div><!-- az-header -->
 
       <div class="az-content-body az-content-body-dashboard-six">
-       <!--  <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
-        <p class="mg-b-20 mg-lg-b-30">Your finance performance and monitoring dashboard template.</p> -->
-        <p class="center-a"><strong>ATTENDENCE SHEET</strong></p>
-           <div class="mg-t-a">
-           
-           <p  class="pdl-10"><strong>Faculty:</strong> </p>
-           <p class="pdl-10"><strong>Subject:</strong> </p>
-           <p class="pdl-10"><strong>Date:</strong> </p>
-          </div>
-           <div class="table-responsive  table-m container">
-         <table class="table table-hover table-bordered mg-b-0  ">
-           <thead class="">
-             <tr>
-               <th> Enrollment No.</th>
-               <th>Name</th>
-             
-               <th>Present/Absent</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <th scope="row">1</th>
-               <td>Tiger Nixon</td>
-              
-               <td>	
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                 
-                 <!-- <span class="glyphicon glyphicon-ok"></span> -->
-             </td>
-             </tr>
-             <tr>
-               <th scope="row">2</th>
-               <td>Garrett Winters</td>
-              
-               <td> 
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                 
-             </tr>
-             <tr>
-               <th scope="row">3</th>
-               <td>Ashton Cox</td>
-              
-               <td>
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                 
-             </tr>
-             <tr>
-               <th scope="row">4</th>
-               <td>Cedric Kelly</td>
-             
-               <td> 
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                
-             </tr>
-             <tr>
-               <th scope="row">5</th>
-               <td>Airi Satou</td>
-              
-               <td>
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                 
-             </tr>
-           </tbody>
-         </table>
-        
-       </div><!-- table-responsive -->
-      <div class="button-a" > <button type="submit" class="btn btn-primary  ">Submit</button></div>
+        <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
+        <p class="mg-b-20 mg-lg-b-30">Your  Classes attendence performance and monitoring dashboard.</p>
 
         <!-- your content goes here -->
       </div><!-- az-content-body -->
