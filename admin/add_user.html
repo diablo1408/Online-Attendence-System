@@ -36,13 +36,13 @@
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
 
     <!-- azia CSS -->
-    <link rel="stylesheet" href="..\css\azia.css">
+    <link rel="stylesheet" href="../css/azia.css">
 
   </head>
   <body class="az-body az-light">
 
     <div class="az-iconbar">
-      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
+      <a href="dashboard_admin.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
       <nav class="nav">
         
         <a href="#asideDashboard " class="nav-link active"><i class="typcn typcn-device-laptop"></i></a>
@@ -52,14 +52,11 @@
         
         <a href="#asideTables" class="nav-link"><i class="typcn typcn-th-large-outline"></i></a>
       </nav>
-     <!--  <div class="az-iconbar-bottom">
-        <a href="" class="az-iconbar-help"><i class="far fa-question-circle"></i></a>
-        <a href="" class="az-img-user online"><img src="https://via.placeholder.com/500x500" alt=""></a>
-      </div> --><!-- az-iconbar-bottom -->
+      
     </div><!-- az-iconbar -->
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
-        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
+        <a href="dashboard_admin.html" class="az-logo">MYatten<span>d</span>.</a>
         <a href="" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
@@ -73,26 +70,14 @@
           
         </div>
         <div id="asideAppsPages" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Attendence</h6>
+          <h6 class="az-iconbar-title"></h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="attendence_details.html" class="nav-link">Schedule Classes</a>
-            <a href="attendence_form.html" class="nav-link">Take Attendence</a>
+            <a href="" class="nav-link"></a>
+            <a href="" class="nav-link"></a>
          
           </nav>
         </div><!-- az-iconbar-pane -->
-        <div id="asideCharts" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">View Report</h6>
-          <small class="az-iconbar-text"></small>
-          <nav class="nav">
-            
-            <a href=""  data-toggle="modal" data-target="#modalsection1">Section Wise</a>
-            <a href=""  data-toggle="modal" data-target="#modalsubject2">Subject Wise</a>
-            <a href=""  data-toggle="modal" data-target="#modalrollno3">RollNo. Wise</a>
-            
-         
-          </nav>
-        </div>
       </div><!-- az-iconbar-body -->
     </div><!-- az-iconbar-aside -->
 
@@ -107,9 +92,7 @@
             <button class="btn"><i class="fas fa-search"></i></button>
           </div><!-- az-header-center -->
           <div class="az-header-right">
-            <!-- <div class="az-header-message">
-              <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
-            </div><-- az-header-message --> 
+            
             
             <div class="dropdown az-profile-menu">
               <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
@@ -137,84 +120,81 @@
       </div><!-- az-header -->
 
       <div class="az-content-body az-content-body-dashboard-six">
-        <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
-        <p class="mg-b-20 mg-lg-b-30">Your  Classes attendence performance and monitoring dashboard.</p>
+        <!-- <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
+        <p class="mg-b-20 mg-lg-b-30">Your  Classes attendence performance and monitoring dashboard.</p> -->
+        <div class="az-content">
+           
+              
+                
+      
+              
+      
+                
+      
+      
+      
+                <div class="az-content-label mg-b-5">Create New Account</div>
+               
+      
+               
+                  <div class="  center-content ">
+                    <div class="card card-body pd-40 t ">
+                      <h5 class="card-title mg-b-20">Account Details</h5>
+      
+                      <div class="form-group">
+                        <label class="az-content-label tx-11 tx-medium tx-gray-600">Name </label>
+                        <input type="text" class="form-control" required>
+                      </div><!-- form-group -->
+      
+                      <div class="form-group">
+                        <label class="az-content-label tx-11 tx-medium tx-gray-600">Username</label>
+                     
+                          <input type="text" class="form-control pd-r-80" required>
+                        
+                      </div><!-- form-group -->
+      
+                      <div class="form-group">
+                        <label class="az-content-label tx-11 tx-medium tx-gray-600">Password</label>
+                     
+                          <input type="text" class="form-control pd-r-80" required>
+                        
+                      </div><!-- form-group -->
+      
+                      <div class="form-group">
+                        <div class="row row-sm">
+                          <div class="col-sm-9">
+                            <label class="az-content-label tx-11 tx-medium tx-gray-600">Account Type</label>
+                            <div class="row row-sm">
+                              <div class="col-sm-7">
+                                <select class="form-control select2-no-search">
+                                  <option label="Choose one"></option>
+                                  <option value="Teacher">Teacher</option>
+                                  <option value="Admin">Admin</option>
+                                </select>
+                              </div><!-- col -->
+                            </div><!-- row -->
+                          </div><!-- col -->
+                        </div><!-- row -->
+                      </div><!-- form-group -->
+                      <div class="form-group mg-b-20">
+                        <label class="ckbox">
+                          <input type="checkbox" checked><span class="tx-13">Save my Account</span>
+                        </label>
+                      </div><!-- form-group -->
+                      <button class="btn btn-az-primary btn-block">Save</button>
+                    </div><!-- card -->
+                  
+               
 
         <!-- your content goes here -->
       </div><!-- az-content-body -->
 
-     <!--  <div class="az-footer">
-        <div class="container-fluid">
-          <span>&copy; 2018 Azia Responsive Bootstrap 4 Dashboard Template</span>
-          <span>Designed by: ThemePixels</span>
-        </div><-- container -->
-      </div><!-- az-footer --> -->
+      
     </div><!-- az-content -->
-
-    <div id="modalsection1" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Section Name">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
-    <div id="modalsubject2" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject Name">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
-    <div id="modalrollno3" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Roll Number">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
 
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/ionicons/ionicons.js"></script>
+    <script src="..lib/ionicons/ionicons.js"></script>
 
     <script src="../js/azia.js"></script>
     <script>
