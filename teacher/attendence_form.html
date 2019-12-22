@@ -143,7 +143,7 @@
        <!--  <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
         <p class="mg-b-20 mg-lg-b-30">Your finance performance and monitoring dashboard template.</p> -->
         <p class="center-a"><strong>ATTENDENCE SHEET</strong></p>
-           <div class="mg-t-a">
+           <div class=" card card-body pd-10 mg-20 ">
            
            <p  class="pdl-10"><strong>Faculty:</strong> </p>
            <p class="pdl-10"><strong>Subject:</strong> </p>
@@ -220,7 +220,8 @@
          </table>
         
        </div><!-- table-responsive -->
-      <div class="button-a" > <button type="submit" class="btn btn-primary  ">Submit</button></div>
+      <div class="button-a" > <a href="#modaldemo8" class="modal-effect btn btn-primary" data-toggle="modal" data-effect="effect-fall">Submit</a></div>
+      <!-- <a href="#modaldemo8" class="modal-effect btn btn-dark btn-block" data-toggle="modal" data-effect="effect-fall">Fall</a> -->
 
         <!-- your content goes here -->
       </div><!-- az-content-body -->
@@ -287,6 +288,26 @@
           </div><!-- modal-content -->
         </div><!-- modal-dialog -->
       </div><!-- modal -->
+      <div id="modaldemo8" class="modal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+              <h6 class="modal-title">Confirm</h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h6>Why We Use Electoral College, Not Popular Vote</h6>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-indigo">Save changes</button>
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div><!-- modal-dialog -->
+      </div><!-- modal -->
    
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -339,10 +360,26 @@
           e.preventDefault();
           $('body').toggleClass('az-iconbar-show');
         });
+        // showing modal with effect
+        $('.modal-effect').on('click', function(e){
+          e.preventDefault();
+          var effect = $(this).attr('data-effect');
+          $('#modaldemo8').addClass(effect);
+        });
+
+        // hide modal with effect
+        $('#modaldemo8').on('hidden.bs.modal', function (e) {
+          $(this).removeClass (function (index, className) {
+              return (className.match (/(^|\s)effect-\S+/g) || []).join(' ');
+          });
+        });
 
 
 
       });
+      
+     
+    
     </script>
   </body>
 </html>
