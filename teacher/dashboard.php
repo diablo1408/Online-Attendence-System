@@ -105,6 +105,7 @@
             <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
           </div><!-- az-header-left -->
           <div class="az-header-center">
+          
           <div class="  card bd-0">
                   <div class="card-header bg-white-400 bd-b-0-f pd-b-0">
                     <nav class="nav nav-tabs">

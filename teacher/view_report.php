@@ -101,8 +101,7 @@
             <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
           </div><!-- az-header-left -->
           <div class="az-header-center">
-            <input type="search" class="form-control" placeholder="Search for anything...">
-            <button class="btn"><i class="fas fa-search"></i></button>
+           
           </div><!-- az-header-center -->
           <div class="az-header-right">
             <!-- <div class="az-header-message">
@@ -1183,7 +1182,7 @@
 
     <script src="../js/azia.js"></script>
     <script>
-      $(function(){
+       $(function(){
         'use strict'
 
         if($('.az-iconbar .nav-link.active').length) {
@@ -1232,26 +1231,12 @@
 
 
       });
-      $(document).ready(function(){
-        'use strict';
+      
+      
 
-        $('#datatable1').DataTable({
-          responsive: true,
-          language: {
-            searchPlaceholder: 'Search...',
-            sSearch: '',
-            lengthMenu: '_MENU_ items/page',
-          }
-        });
 
-        $('#datatable2').DataTable({
-          bLengthChange: false,
-          searching: false,
-          responsive: true
-        });
-
-        // Select2
-        $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+     
+      
     </script>
   </body>
 </html>

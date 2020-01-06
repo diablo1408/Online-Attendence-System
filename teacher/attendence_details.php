@@ -100,8 +100,7 @@
             <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
           </div><!-- az-header-left -->
           <div class="az-header-center">
-            <input type="search" class="form-control" placeholder="Search for anything...">
-            <button class="btn"><i class="fas fa-search"></i></button>
+           
           </div><!-- az-header-center -->
           <div class="az-header-right">
            <!--  <div class="az-header-message">
