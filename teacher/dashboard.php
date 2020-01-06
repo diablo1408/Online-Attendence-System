@@ -1,3 +1,4 @@
+<?php include('../include/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,7 +44,7 @@
   <body class="az-body az-light">
 
     <div class="az-iconbar">
-      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
+      <a href="dashboard.php" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
       <nav class="nav">
         
         <a href="#asideDashboard " class="nav-link active"><i class="typcn typcn-device-laptop"></i></a>
@@ -60,7 +61,7 @@
     </div><!-- az-iconbar -->
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
-        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
+        <a href="dashboard.php" class="az-logo">MYatten<span>d</span>.</a>
         <a href="" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
@@ -77,8 +78,8 @@
           <h6 class="az-iconbar-title">Attendence</h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="attendence_details.html" class="nav-link">Schedule Classes</a>
-            <a href="attendence_form.html" class="nav-link">Take Attendence</a>
+            <a href="attendence_details.php" class="nav-link">Schedule Classes</a>
+            <a href="attendence_form.php" class="nav-link">Take Attendence</a>
          
           </nav>
         </div><!-- az-iconbar-pane -->
@@ -109,7 +110,7 @@
           </div><!-- az-header-center -->
           <div class="az-header-right">
             <!-- <div class="az-header-message">
-              <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
+              <a href="app-chat.php"><i class="typcn typcn-messages"></i></a>
             </div><-- az-header-message --> 
             
             <div class="dropdown az-profile-menu">
@@ -130,7 +131,7 @@
                 <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+                <a href="page-signin.php" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
               </div><!-- dropdown-menu -->
             </div>
           </div><!-- az-header-right -->

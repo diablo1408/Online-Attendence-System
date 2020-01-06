@@ -1,3 +1,12 @@
+<?php include('../include/session.php'); 
+
+$stream=mysqli_real_escape_string($db,$_POST['stream']);
+$section=mysqli_real_escape_string($db,$_POST['section']);
+$type=mysqli_real_escape_string($db,$_POST['type']);
+$subject=mysqli_real_escape_string($db,$_POST['subject']);
+$query="SELECT * FROM students WHERE stream='$stream' AND section='$section'";
+$execute=mysqli_query($db,$query);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,7 +55,7 @@
   <body class="az-body az-light">
 
     <div class="az-iconbar">
-      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
+      <a href="dashboard.php" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
       <nav class="nav">
         
         <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
@@ -61,7 +70,7 @@
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
        
-        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
+        <a href="dashboard.php" class="az-logo">MYatten<span>d</span>.</a>
         <a href="" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
@@ -90,8 +99,7 @@
           <h6 class="az-iconbar-title">Attendence</h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="attendence_details.html" class="nav-link">Schedule Classes</a>
-            <a href="attendence_form.html" class="nav-link active">Take Attendence</a>
+            <a href="attendence_details.php" class="nav-link">Add Attendence</a>
          
           </nav>
         </div><!-- az-iconbar-pane -->
@@ -110,7 +118,7 @@
           </div><!-- az-header-center -->
           <div class="az-header-right">
             <!-- <div class="az-header-message">
-              <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
+              <a href="app-chat.php"><i class="typcn typcn-messages"></i></a>
             </div><-- az-header-message -->
            
            
@@ -132,12 +140,18 @@
                 <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+                <a href="page-signin.php" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
               </div><!-- dropdown-menu -->
             </div>
           </div><!-- az-header-right -->
         </div><!-- container -->
       </div><!-- az-header -->
+      <form method="post" action="add_attendence.php" id="form1"></form>
+        <input type="text" form="form1" value="<?php echo $stream;?>" name="stream" hidden>
+        <input type="text" form="form1" value="<?php echo $section;?>" name="section" hidden>
+        <input type="text" form="form1" value="<?php echo $type;?>" name="type" hidden>
+        <input type="text" form="form1" value="<?php echo $subject;?>" name="subject" hidden>
+      
 
       <div class="az-content-body az-content-body-dashboard-six">
        <!--  <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
@@ -145,13 +159,13 @@
         <p class="center-a"><strong>ATTENDENCE SHEET</strong></p>
            <div class=" card card-body pd-10 mg-20 ">
            
-           <p  class="pdl-10"><strong>Faculty:</strong> </p>
-           <p class="pdl-10"><strong>Subject:</strong> </p>
-           <p class="pdl-10"><strong>Date:</strong> </p>
+           <p  class="pdl-10"><strong>Faculty:</strong> <?php echo ucfirst($fname);?> </p>
+           <p class="pdl-10"><strong>Subject:</strong><?php echo $subject;?> </p>
+           <p class="pdl-10"><strong>Date:</strong> <?php echo date('d-m-y');?></p>
           </div>
            <div class="table-responsive  table-m ">
          <table class="table table-hover table-bordered mg-b-0  ">
-           <thead class="">
+           <thead>
              <tr>
                <th> Enrollment No.</th>
                <th>Name</th>
@@ -160,67 +174,33 @@
              </tr>
            </thead>
            <tbody>
+            <?php 
+            while ($DataRows=mysqli_fetch_array($execute)) {
+              $id=$DataRows['id'];
+              $name=$DataRows['name'];
+              $enr=$DataRows['enrollment'];
+           
+            ?>
              <tr>
-               <th scope="row">1</th>
-               <td>Tiger Nixon</td>
+               <td scope="row"><?php echo $enr;?></td>
+               <td><?php echo $name;?></td>
               
                <td>	
                   <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
+                      <input form="form1" name="student[<?php echo $enr; ?>]" value='1' type="checkbox"><span></span>
+                  </label>
                  
                  
                 </td>
              </tr>
-             <tr>
-               <th scope="row">2</th>
-               <td>Garrett Winters</td>
-              
-               <td> 
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                    </td>
-                 
-             </tr>
-             <tr>
-               <th scope="row">3</th>
-               <td>Ashton Cox</td>
-              
-               <td>
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                    </td>
-                 
-             </tr>
-             <tr>
-               <th scope="row">4</th>
-               <td>Cedric Kelly</td>
-             
-               <td> 
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                    </td>
-                
-             </tr>
-             <tr>
-               <th scope="row">5</th>
-               <td>Airi Satou</td>
-              
-               <td>
-                  <label class="ckbox">
-                      <input type="checkbox"><span></span>
-                    </label>
-                    </td>
-                 
-             </tr>
+
+             <?php  }?>
            </tbody>
          </table>
         
        </div><!-- table-responsive -->
-      <div class="button-a" > <a href="#modaldemo8" class="modal-effect btn btn-primary" data-toggle="modal" data-effect="effect-fall">Submit</a></div>
+      <button form="form1" name="submit" class="button-a btn btn-success">Submit</button>
+     
       <!-- <a href="#modaldemo8" class="modal-effect btn btn-dark btn-block" data-toggle="modal" data-effect="effect-fall">Fall</a> -->
 
         <!-- your content goes here -->
@@ -229,86 +209,7 @@
      
     </div><!-- az-content -->
 
-    <div id="modalsection1" class="modal">
-        <div class="modal-dialog wd-xl-400" role="document">
-          <div class="modal-content">
-            <div class="modal-body pd-20 pd-sm-40">
-              <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-  
-              <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-              <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-  
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Section Name">
-              </div><!-- form-group -->
-            
-              <button class="btn btn-primary btn-block">Continue</button>
-            </div><!-- modal-body -->
-          </div><!-- modal-content -->
-        </div><!-- modal-dialog -->
-      </div><!-- modal -->
-      <div id="modalsubject2" class="modal">
-        <div class="modal-dialog wd-xl-400" role="document">
-          <div class="modal-content">
-            <div class="modal-body pd-20 pd-sm-40">
-              <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-  
-              <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-              <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-  
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject Name">
-              </div><!-- form-group -->
-            
-              <button class="btn btn-primary btn-block">Continue</button>
-            </div><!-- modal-body -->
-          </div><!-- modal-content -->
-        </div><!-- modal-dialog -->
-      </div><!-- modal -->
-      <div id="modalrollno3" class="modal">
-        <div class="modal-dialog wd-xl-400" role="document">
-          <div class="modal-content">
-            <div class="modal-body pd-20 pd-sm-40">
-              <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-  
-              <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-              <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-  
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Roll Number">
-              </div><!-- form-group -->
-            
-              <button class="btn btn-primary btn-block">Continue</button>
-            </div><!-- modal-body -->
-          </div><!-- modal-content -->
-        </div><!-- modal-dialog -->
-      </div><!-- modal -->
-      <div id="modaldemo8" class="modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content modal-content-demo">
-            <div class="modal-header">
-              <h6 class="modal-title">Confirm</h6>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h6>Why We Use Electoral College, Not Popular Vote</h6>
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-indigo">Save changes</button>
-              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div><!-- modal-dialog -->
-      </div><!-- modal -->
+
    
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>

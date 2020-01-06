@@ -1,3 +1,4 @@
+<?php include('../include/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,7 +44,7 @@
   <body class="az-body az-light">
 
     <div class="az-iconbar">
-      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
+      <a href="dashboard.php" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
       <nav class="nav">
         
         <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
@@ -56,7 +57,7 @@
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
        
-        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
+        <a href="dashboard.php" class="az-logo">MYatten<span>d</span>.</a>
         <a href="" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
@@ -85,8 +86,7 @@
           <h6 class="az-iconbar-title">Attendence</h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="attendence_details.html" class="nav-link active">Schedule Classes</a>
-            <a href="attendence_form.html" class="nav-link">Take Attendence</a>
+            <a href="attendence_details.php" class="nav-link active">Add Attendence</a>
          
           </nav>
         </div><!-- az-iconbar-pane -->
@@ -105,7 +105,7 @@
           </div><!-- az-header-center -->
           <div class="az-header-right">
            <!--  <div class="az-header-message">
-              <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
+              <a href="app-chat.php"><i class="typcn typcn-messages"></i></a>
             </div><-- az-header-message --> 
            
             <div class="dropdown az-profile-menu">
@@ -126,7 +126,7 @@
                 <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+                <a href="page-signin.php" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
               </div><!-- dropdown-menu -->
             </div>
           </div><!-- az-header-right -->
@@ -146,65 +146,70 @@
       
                 <div class="az-content-label mg-b-5"><font size="6">Attendance Details</font></div>
                 
-      
+                <form id="form1" method="post" action="attendence_form.php"></form>
                 <div class="pd-30 pd-sm-40 bg-gray-200 ">
                   <div class="row row-xs align-items-center mg-b-20">
                     <div class="col-md-4">
                       <label class="form-label mg-b-0 font-weight-bold">Academic Year</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <input type="text" class="form-control" placeholder="Enter Academic Year">
+                      <input form="form1" type="text" class="form-control" placeholder="Enter Academic Year" value="<?php echo date('Y');?>" disabled>
                     </div><!-- col -->
                   </div><!-- row -->
       
-                  <div class="row row-xs align-items-center mg-b-20">
-                    <div class="col-md-4">
-                      <label class="form-label mg-b-0 font-weight-bold">Year</label>
-                    </div><!-- col -->
-                    <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <input type="text" class="form-control" placeholder="Enter Year">
-                    </div><!-- col -->
-                  </div><!-- row -->
       
                   <div class="row row-xs align-items-center mg-b-20">
                     <div class="col-md-4">
                       <label class="form-label mg-b-0 font-weight-bold">Stream</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <input type="email" class="form-control" placeholder="Enter Stream">
+                      <select name="stream" form="form1" class="form-control">
+                        <option value="0" selected>Select</option>
+                        <option value="CSE">CSE</option>
+                        <option value="MAE">MAE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="IT">IT</option>
+                        <option value="BBA">BBA</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MBA">MBA</option>
+                      </select>
                     </div><!-- col -->
                   </div><!-- row -->
       
-              <div class="row row-xs align-items-center mg-b-20">
-                    <div class="col-md-4">
-                      <label class="form-label mg-b-0 font-weight-bold">Semester</label>
-                    </div><!-- col -->
-                    <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <input type="email" class="form-control" placeholder="Enter semester">
-                    </div><!-- col -->
-                  </div><!-- row -->
+              
           
               <div class="row row-xs align-items-center mg-b-20">
                     <div class="col-md-4">
-                      <label class="form-label mg-b-0 font-weight-bold">Class</label>
+                      <label class="form-label mg-b-0 font-weight-bold">Section</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <input type="email" class="form-control" placeholder="Enter Class">
+                      <input type="text" form="form1" name="section" class="form-control" placeholder="Enter Class">
                     </div><!-- col -->
                   </div><!-- row -->
-               
-              <div class="row row-xs align-items-center mg-b-20">
+
+                  <div class="row row-xs align-items-center mg-b-20">
                     <div class="col-md-4">
-                      <label class="form-label mg-b-0 font-weight-bold">Faculty Name</label>
+                      <label class="form-label mg-b-0 font-weight-bold">Type</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <input type="email" class="form-control" placeholder="Enter Faculty Name">
+                      <select name="type" form="form1" class="form-control">
+                        <option value="0" selected>Select</option>
+                        <option value="1">Theory</option>
+                        <option value="2">Practical</option>
+                      </select>
                     </div><!-- col -->
                   </div><!-- row -->
-           
+                  <div class="row row-xs align-items-center mg-b-20">
+                    <div class="col-md-4">
+                      <label class="form-label mg-b-0 font-weight-bold">Subject</label>
+                    </div><!-- col -->
+                    <div class="col-md-8 mg-t-5 mg-md-t-0">
+                      <input type="text" form="form1" name="subject" class="form-control" placeholder="ADA/DCOMM">
+                    </div><!-- col -->
+                  </div><!-- row -->
                
-      
-                  <button class="btn btn-az-primary pd-x-30 mg-r-5">Save</button>
+                  <button form="form1" class="btn btn-az-primary pd-x-30 mg-r-5">Save</button>
                   <button class="btn btn-dark pd-x-30">Cancel</button>
                 </div>
 
