@@ -105,8 +105,14 @@
             <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
           </div><!-- az-header-left -->
           <div class="az-header-center">
-            <input type="search" class="form-control" placeholder="Search for anything...">
-            <button class="btn"><i class="fas fa-search"></i></button>
+          <div class="  card bd-0">
+                  <div class="card-header bg-white-400 bd-b-0-f pd-b-0">
+                    <nav class="nav nav-tabs">
+                      <a class="nav-link active" data-toggle="tab" href="#tabCont1">Active Classes</a>
+                      <a class="nav-link" data-toggle="tab" href="#tabCont2">Previous Classes</a>
+                     
+                  </div>
+           
           </div><!-- az-header-center -->
           <div class="az-header-right">
             <!-- <div class="az-header-message">
@@ -139,8 +145,40 @@
       </div><!-- az-header -->
 
       <div class="az-content-body az-content-body-dashboard-six">
-        <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
-        <p class="mg-b-20 mg-lg-b-30">Your  Classes attendence performance and monitoring dashboard.</p>
+       
+        <div class="bd bd-t-0 tab-content">
+           <div id="tabCont1" class="tab-pane active show">
+               <div class="row row-sm">
+                   <div class="col-sm">
+                   <div class="card bg-gray-200 bd-0">
+                      <div class="card-body">
+                       <h5 class="card-title tx-dark tx-medium mg-b-10">The Card Title</h5>
+                       <p class="card-subtitle mg-b-15">This is the card subtitle</p>
+                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                       <a href="#" class="card-link">Card link</a>
+                       <a href="#" class="card-link">Another link</a>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-md">
+                    <div class="card bg-gray-200 bd-0">
+                       <div class="card-body">
+                        <h5 class="card-title tx-dark tx-medium mg-b-10">The Card Title</h5>
+                        <p class="card-subtitle mg-b-15">This is the card subtitle</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                      </div>
+                    </div>
+                  </div>
+               
+              </div>
+            
+            
+          </div><!-- tab-pane -->
+          <div id="tabCont2" class="tab-pane">This is tab content 2...</div>
+          
+        </div>
 
         <!-- your content goes here -->
       </div><!-- az-content-body -->
@@ -168,7 +206,7 @@
               <input type="text" class="form-control" placeholder="Section Name">
             </div><!-- form-group -->
           
-            <button class="btn btn-primary btn-block">Continue</button>
+           <a href="view_report.php"><button class="btn btn-primary btn-block">Continue</button></a> 
           </div><!-- modal-body -->
         </div><!-- modal-content -->
       </div><!-- modal-dialog -->
