@@ -54,98 +54,11 @@ $execute=mysqli_query($db,$query);
   </head>
   <body class="az-body az-light">
 
-    <div class="az-iconbar">
-      <a href="dashboard.php" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
-      <nav class="nav">
-        
-        <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
-       
-        <a href="#asideAppsPages" class="nav-link active"><i class="typcn typcn-folder-add"></i></a>
-        <a href="#asideCharts" class="nav-link"><i class="typcn typcn-chart-line-outline"></i></a>
-        
-        <a href="#asideTables" class="nav-link"><i class="typcn typcn-th-large-outline"></i></a>
-      </nav>
-     
-    </div><!-- az-iconbar -->
-    <div class="az-iconbar-aside">
-      <div class="az-iconbar-header">
-       
-        <a href="dashboard.php" class="az-logo">MYatten<span>d</span>.</a>
-        <a href="" class="az-iconbar-toggle-menu">
-          <i class="icon ion-md-arrow-back"></i>
-          <i class="icon ion-md-close"></i>
-        </a>
-      </div><!-- az-iconbar-header -->
-      <div class="az-iconbar-body">
-        <div id="asideDashboard" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Dashboard</h6>
-         
-
-        
-        </div>
-        <div id="asideCharts" class="az-iconbar-pane">
-            <h6 class="az-iconbar-title">View Report</h6>
-            <small class="az-iconbar-text"></small>
-            <nav class="nav">
-              
-              <a href=""  data-toggle="modal" data-target="#modalsection1">Section Wise</a>
-              <a href=""  data-toggle="modal" data-target="#modalsubject2">Subject Wise</a>
-              <a href=""  data-toggle="modal" data-target="#modalrollno3">RollNo. Wise</a>
-              
-           
-            </nav>
-          </div>
-        <div id="asideAppsPages" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Attendence</h6>
-          <small class="az-iconbar-text"></small>
-          <nav class="nav">
-            <a href="attendence_details.php" class="nav-link">Add Attendence</a>
-         
-          </nav>
-        </div><!-- az-iconbar-pane -->
-      </div><!-- az-iconbar-body -->
-    </div><!-- az-iconbar-aside -->
-
+    <?php include ('./common_components/side_nav_bar.php');?>
+    
     <div class="az-content az-content-dashboard-six">
-      <div class="az-header az-header-dashboard-six">
-        <div class="container-fluid">
-          <div class="az-header-left">
-            <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
-          </div><!-- az-header-left -->
-          <div class="az-header-center">
-            <input type="search" class="form-control" placeholder="Search for anything...">
-            <button class="btn"><i class="fas fa-search"></i></button>
-          </div><!-- az-header-center -->
-          <div class="az-header-right">
-            <!-- <div class="az-header-message">
-              <a href="app-chat.php"><i class="typcn typcn-messages"></i></a>
-            </div><-- az-header-message -->
-           
-           
-            <div class="dropdown az-profile-menu">
-              <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
-              <div class="dropdown-menu">
-                <div class="az-dropdown-header d-sm-none">
-                  <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
-                </div>
-                <div class="az-header-profile">
-                  <div class="az-img-user">
-                    <img src="https://via.placeholder.com/500x500" alt="">
-                  </div><!-- az-img-user -->
-                  <h6>Aziana Pechon</h6>
-                  <span>Premium Member</span>
-                </div><!-- az-header-profile -->
+     <?php include ('./common_components/header.php');?>  
 
-                <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                <a href="page-signin.php" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
-              </div><!-- dropdown-menu -->
-            </div>
-          </div><!-- az-header-right -->
-        </div><!-- container -->
-      </div><!-- az-header -->
       <form method="post" action="add_attendence.php" id="form1"></form>
         <input type="text" form="form1" value="<?php echo $stream;?>" name="stream" hidden>
         <input type="text" form="form1" value="<?php echo $section;?>" name="section" hidden>
@@ -199,15 +112,18 @@ $execute=mysqli_query($db,$query);
          </table>
         
        </div><!-- table-responsive -->
-      <button form="form1" name="submit" class="button-a btn btn-success">Submit</button>
+       <button class="btn btn-indigo btn-rounded button-a">Submit</button>
      
-      <!-- <a href="#modaldemo8" class="modal-effect btn btn-dark btn-block" data-toggle="modal" data-effect="effect-fall">Fall</a> -->
-
+     
+     
         <!-- your content goes here -->
       </div><!-- az-content-body -->
 
      
-    </div><!-- az-content -->
+    
+      <?php include './common_components/footer.php';?>
+     </div><!-- az-content -->
+
 
 
    

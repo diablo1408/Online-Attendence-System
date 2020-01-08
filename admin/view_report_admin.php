@@ -28,35 +28,37 @@
     <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
     <meta name="author" content="ThemePixels">
 
-    <title>MYattend.-Dashboard</title>
+    <title>Admin Result</title>
 
     <!-- vendor css -->
     <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="../lib/select2/css/select2.min.css" rel="stylesheet">
+
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="../css/azia.css">
 
   </head>
   <body class="az-body az-light">
-
     <div class="az-iconbar">
-      <a href="dashboard_admin.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
+      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
       <nav class="nav">
         
-        <a href="dashboard_admin.html" class="nav-link active"><i class="typcn typcn-device-laptop"></i></a>
-       
-        <a href="#asideAppsPages" class="nav-link"><i class="typcn typcn-folder-add"></i></a>
+        <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
+       <a href="#asideAppsPages" class="nav-link active"><i class="typcn typcn-folder-add"></i></a>
         <a href="#asideCharts" class="nav-link"><i class="typcn typcn-chart-line-outline"></i></a>
-        
         <a href="#asideTables" class="nav-link"><i class="typcn typcn-th-large-outline"></i></a>
       </nav>
-      
+      <!-- az-iconbar-bottom -->
     </div><!-- az-iconbar -->
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
-        <a href="dashboard_admin.html" class="az-logo">MYatten<span>d</span>.</a>
+       
+        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
         <a href="" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
@@ -65,25 +67,17 @@
       <div class="az-iconbar-body">
         <div id="asideDashboard" class="az-iconbar-pane">
           <h6 class="az-iconbar-title">Dashboard</h6>
-          <!-- <small class="az-iconbar-text">Choose between layouts to experience different look and feel for your projects.</small> -->
+         
 
-          
+         
         </div>
+       
         <div id="asideAppsPages" class="az-iconbar-pane">
           <h6 class="az-iconbar-title"></h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="add_user.html" class="nav-link">Add Account</a>
-            <a href="add_student.html" class="nav-link">Sudent Registration</a>
-         
-          </nav>
-        </div>
-        <div id="asideCharts" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title"></h6>
-          <small class="az-iconbar-text"></small>
-          <nav class="nav">
-            <a href="view_report_admin.html" class="nav-link">Attendence Report</a>
-           
+            <a href="" class="nav-link active"></a>
+            <a href="" class="nav-link"></a>
          
           </nav>
         </div><!-- az-iconbar-pane -->
@@ -101,8 +95,10 @@
             <button class="btn"><i class="fas fa-search"></i></button>
           </div><!-- az-header-center -->
           <div class="az-header-right">
-            
-            
+           <!--  <div class="az-header-message">
+              <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
+            </div><-- az-header-message --> 
+           
             <div class="dropdown az-profile-menu">
               <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
               <div class="dropdown-menu">
@@ -129,25 +125,91 @@
       </div><!-- az-header -->
 
       <div class="az-content-body az-content-body-dashboard-six">
-        <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
-        <p class="mg-b-20 mg-lg-b-30">Your  Classes attendence performance and monitoring dashboard.</p>
+        <p class="mg-b-20 mg-lg-b-30"></p> 
+        <div class="az-content-body">
+          <h2 class="az-content-title">Result</h2>
+          <div class="az-content-label mg-b-10">Attendence Data</div>
+          <div>
+            <div class="row row-xs align-items-center mg-b-10">
+              <div class="col-md-1" >
+               <label class="form-label mg-b-0">Rollno:</label>
+              </div><!-- col -->
+             <div class="col-md-4 mg-t-5 mg-md-t-0">
+               <input type="number" class="form-control" placeholder="Enter RollNo">
+             </div><!-- col -->
+            </div><!-- row -->
+            <div class="row row-xs align-items-center mg-b-10">
+              <div class="col-md-1">
+                <label class="form-label mg-b-0">Stream:</label>
+              </div><!-- col -->
+              <div class="col-md-4 mg-t-5 mg-md-t-0">
+                <input type="text" class="form-control" placeholder="Enter Stream">
+              </div><!-- col -->
+            </div><!-- row -->
+            <div class="row row-xs align-items-center mg-b-10">
+              <div class="col-md-1" >
+               <label class="form-label mg-b-0">Section:</label>
+              </div><!-- col -->
+             <div class="col-md-4 mg-t-5 mg-md-t-0">
+               <input type="text" class="form-control" placeholder="Enter Section">
+             </div><!-- col -->
+            </div><!-- row -->
+            <div class="row row-xs align-items-center mg-b-10">
+              <div class="col-md-1">
+                <label class="form-label mg-b-0">Subject:</label>
+              </div><!-- col -->
+              <div class="col-md-4 mg-t-5 mg-md-t-0 ">
+                <input type="text" class="form-control" placeholder="Enter Subject">
+              </div><!-- col -->
+            </div><!-- row -->
+            <div class="row row-xs align-items-center mg-b-10">
+              <div class="col-md-1" >
+               <label class="form-label mg-b-0">From:</label>
+              </div><!-- col -->
+             <div class="col-md-4 mg-t-5 mg-md-t-0">
+               <input type="date" class="form-control" placeholder="Enter Date">
+             </div><!-- col -->
+             <div class="col-md-1" >
+              <label class="form-label mg-b-0 mg-l-20">To:</label>
+             </div><!-- col -->
+             <div class="col-md-4 mg-t-5 mg-md-t-0">
+              <input type="date" class="form-control" placeholder="Enter Date">
+             </div>
+            </div><!-- row -->
+            <div class="row row-xs align-items-center mg-b-20">
+              <!-- col -->
+            </div><!-- row -->
+           <a href="report_table.html"> <button class="btn btn-az-primary pd-x-30 mg-r-5 mg-b-50" >Load Data</button>  </a>
+          </div>
+         
+         <hr class="mg-y-30 mg-lg-y-50">
+        </div>
+      </div>
+     </div>
+    <div class="az-footer">
+      <div class="container">
+        <span>&copy;  ADGITM </span>
+        <span>Designed by: Dibwab</span>
+      </div><!-- container -->
+    </div><!-- az-footer -->
 
-        <!-- your content goes here -->
-      </div><!-- az-content-body -->
-
-      
-    </div><!-- az-content -->
-
+    
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="..lib/ionicons/ionicons.js"></script>
+    <script src="../lib/ionicons/ionicons.js"></script>
+    <script src="../lib/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../lib/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
+    <script src="../lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="../lib/select2/js/select2.min.js"></script>
 
     <script src="../js/azia.js"></script>
-    <script>
-      $(function(){
-        'use strict'
 
-        if($('.az-iconbar .nav-link.active').length) {
+    <script>
+      $(document).ready(function(){
+        'use strict';
+
+if($('.az-iconbar .nav-link.active').length) {
           var targ = $('.az-iconbar .nav-link.active').attr('href');
           $(targ).addClass('show');
 
@@ -189,8 +251,17 @@
           e.preventDefault();
           $('body').toggleClass('az-iconbar-show');
         });
+        $('#datatable1').DataTable({
+          responsive: true,
+          language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+          }
+        });
 
-
+        // Select2
+        $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
 
       });
     </script>
