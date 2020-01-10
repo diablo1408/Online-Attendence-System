@@ -40,13 +40,11 @@
           </nav>
         </div><!-- az-iconbar-pane -->
         <div id="asideCharts" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">View Report</h6>
+          <h6 class="az-iconbar-title">Attedence Report</h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
+          <a href="view_report.php" class="nav-link">Schedule Classes</a>
             
-            <a href=""  data-toggle="modal" data-target="#modalsection1">Section Wise</a>
-            <a href=""  data-toggle="modal" data-target="#modalsubject2">Subject Wise</a>
-            <a href=""  data-toggle="modal" data-target="#modalrollno3">RollNo. Wise</a>
             
          
           </nav>

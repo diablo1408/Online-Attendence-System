@@ -73,6 +73,13 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
+                        <button data-toggle="dropdown" class="btn btn-indigo ">Dropdown <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
+                           <div class="dropdown-menu">
+                             <a href="" class="dropdown-item">Profile</a>
+                             <a href="" class="dropdown-item">Activity Logs</a>
+                             <a href="" class="dropdown-item">Account Settings</a>
+                             <a href="" class="dropdown-item">Logout</a>
+                            </div><!-- dropdown-menu -->
                       </div>
                     </div>
                   </div>
@@ -94,66 +101,7 @@
 
      
 
-    <div id="modalsection1" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Section Name">
-            </div><!-- form-group -->
-          
-           <a href="view_report.php"><button class="btn btn-primary btn-block">Continue</button></a> 
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
-    <div id="modalsubject2" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject Name">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
-    <div id="modalrollno3" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Roll Number">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
+    
 
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>

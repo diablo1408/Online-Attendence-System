@@ -37,6 +37,7 @@
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="../css/azia.css">
+    <link rel="stylesheet" href="../css/customcss.css">
 
   </head>
   <body class="az-body az-light">
@@ -125,24 +126,13 @@
         <!-- <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
         <p class="mg-b-20 mg-lg-b-30">Your  Classes attendence performance and monitoring dashboard.</p> -->
         <div class="az-content">
-           
-              
-                
-      
-              
-      
-                
-      
-      
-      
-                <div class="az-content-label mg-b-5">Create New Account</div>
-               
+          <h5 class="card-title mg-b-20" align="center"> Create New Account</h5>
       
                
-                  <div class="  center-content ">
-                    <div class="card card-body pd-40 t ">
-                      <h5 class="card-title mg-b-20">Account Details</h5>
-      
+            <div class="  center-content ">
+              <div class="card card-body pd-10t ">
+                 <div class="az-content-label mg-b-10" >Account Details</div>
+
                       <div class="form-group">
                         <label class="az-content-label tx-11 tx-medium tx-gray-600">Name </label>
                         <input type="text" class="form-control" required>
@@ -183,8 +173,9 @@
                           <input type="checkbox" checked><span class="tx-13">Save my Account</span>
                         </label>
                       </div><!-- form-group -->
-                      <button class="btn btn-az-primary btn-block">Save</button>
+                     
                     </div><!-- card -->
+                    <button class="btn btn-az-primary mg-t-10 center" >Save</button>
                   
                
 

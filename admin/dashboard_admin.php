@@ -82,7 +82,8 @@
           <h6 class="az-iconbar-title"></h6>
           <small class="az-iconbar-text"></small>
           <nav class="nav">
-            <a href="view_report_admin.html" class="nav-link">Attendence Report</a>
+            <a href="view_report_admin.php" class="nav-link">Attendence Report</a>
+           
            
          
           </nav>

@@ -179,7 +179,7 @@
             <div class="row row-xs align-items-center mg-b-20">
               <!-- col -->
             </div><!-- row -->
-           <a href="report_table.html"> <button class="btn btn-az-primary pd-x-30 mg-r-5 mg-b-50" >Load Data</button>  </a>
+           <a href="report_table.php"> <button class="btn btn-az-primary pd-x-30 mg-r-5 mg-b-50" >Load Data</button>  </a>
           </div>
          
          <hr class="mg-y-30 mg-lg-y-50">

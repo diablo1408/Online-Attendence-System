@@ -138,25 +138,7 @@
     </div><!-- az-content -->
 
 
-    <div id="modalsection1" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-          
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Section Name">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
+   
     
    
 

@@ -34,6 +34,9 @@
     <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="../lib/select2/css/select2.min.css" rel="stylesheet">
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="..\css\azia.css">
@@ -97,17 +100,33 @@
             </div><!-- col -->
           </div><!-- row -->
           <div class="row row-sm mg-b-20">
-              <div class="col-lg-4">
-                <select class="form-control select2-no-search">
-                  <option label="Choose one"></option>
-                  <option value="Firefox">Firefox</option>
-                  <option value="Chrome">Chrome</option>
-                  <option value="Safari">Safari</option>
-                  <option value="Opera">Opera</option>
-                  <option value="Internet Explorer">Internet Explorer</option>
-                </select>
-              </div>
-              <div class="az-toggle on"><span></span></div>
+            <div class="col-sm-4">
+              <div class="az-content-label mg-b-5">Filter</div>
+
+              <select class="form-control select2-no-search">
+                <option label="Choose one"></option>
+                <option value="Firefox">Firefox</option>
+                <option value="Chrome">Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Opera">Opera</option>
+                <option value="Internet Explorer">Internet Explorer</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <div class="az-content-label mg-b-5">Section</div>
+
+              <select class="form-control select2-no-search">
+                <option label="Choose one"></option>
+                <option value="Firefox">Firefox</option>
+                <option value="Chrome">Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Opera">Opera</option>
+                <option value="Internet Explorer">Internet Explorer</option>
+              </select>
+            </div><!-- col-4 -->
+            <div class="az-content-label mg-b-5">THEORY/PRACTICAL</div>
+            <div class="az-toggle on  mg-b-20 "><span></span></div>
+         </div>
           
 
            <div class="table-responsive mg-b-10">
@@ -168,66 +187,7 @@
       <?php include ('./common_components/footer.php') ;?>
     </div><!-- az-content -->
 
-    <div id="modalsection1" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Section Name">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
-    <div id="modalsubject2" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject Name">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
-    <div id="modalrollno3" class="modal">
-      <div class="modal-dialog wd-xl-400" role="document">
-        <div class="modal-content">
-          <div class="modal-body pd-20 pd-sm-40">
-            <button type="button" class="close pos-absolute t-15 r-20 tx-26" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-
-            <!-- <h5 class="modal-title mg-b-5">Create New Account</h5>
-            <p class="mg-b-20">Let's get you all setup so you can begin using our app.</p> -->
-
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Roll Number">
-            </div><!-- form-group -->
-          
-            <button class="btn btn-primary btn-block">Continue</button>
-          </div><!-- modal-body -->
-        </div><!-- modal-content -->
-      </div><!-- modal-dialog -->
-    </div><!-- modal -->
+    
     
 
     <script src="../lib/jquery/jquery.min.js"></script>

@@ -45,7 +45,7 @@
         <a href="dashboard_admin.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
         <nav class="nav">
           
-          <a href="dashboard_admin.html" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
+          <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
          <a href="#asideAppsPages" class="nav-link active"><i class="typcn typcn-folder-add"></i></a>
           <a href="#asideCharts" class="nav-link"><i class="typcn typcn-chart-line-outline"></i></a>
           <a href="#asideTables" class="nav-link"><i class="typcn typcn-th-large-outline"></i></a>
@@ -133,42 +133,39 @@
           
           
           <div  class ="card card-body pd-20">
-              <div class="row row-xs align-items-center mg-b-10">
-                <div class="col-md-1">
-                  <label class="form-label mg-b-0">Year:</label>
+              <div class="row row-sm align-items-center mg-10">
+                <div class="col-md-2">
+                  <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Year :</label>
+                </div><!-- col -->
+                <div class=" mg-t-5 mg-md-t-0">
+                  <input type="text" class="form-control" placeholder="Enter your firstname">
+                </div><!-- col -->
+                <div class="col-md-2">
+                  <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Stream :</label>
                 </div><!-- col -->
                 <div class=" mg-t-5 mg-md-t-0">
                   <input type="text" class="form-control" placeholder="Enter your firstname">
                 </div><!-- col -->
               </div><!-- row -->
   
-              <div class="row row-xs align-items-center mg-b-10">
-                  <div class="col-md-1">
-                    <label class="form-label mg-b-0">Stream:</label>
-                  </div><!-- col -->
-                  <div class=" mg-t-5 mg-md-t-0">
-                    <input type="text" class="form-control" placeholder="Enter your firstname">
-                  </div><!-- col -->
-                </div><!-- row -->
+              
   
-                <div class="row row-xs align-items-center mg-b-10">
-                    <div class="col-md-1" >
-                      <label class="form-label mg-b-0">Total Students:</label>
+                <div class="row row-sm align-items-center mg-10">
+                    <div class="col-md-2" >
+                      <label class="form-label mg-b-0 font-weight-bold"  style="font-size:medium">Total Students:</label>
                     </div><!-- col -->
                     <div class=" mg-t-5 mg-md-t-0">
                       <input type="text" class="form-control" placeholder="Enter your firstname">
                     </div><!-- col -->
+                    <div class="col-md-2">
+                      <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Class:</label>
+                    </div><!-- col -->
+                    <div class=" mg-t-5 mg-md-t-0 ">
+                      <input type="text" class="form-control" placeholder="Enter your firstname">
+                    </div><!-- col -->
                   </div><!-- row -->
 
-                  <div class="row row-xs align-items-center mg-b-50">
-                      <div class="col-md-1">
-                        <label class="form-label mg-b-0">Class:</label>
-                      </div><!-- col -->
-                      <div class=" mg-t-5 mg-md-t-0 ">
-                        <input type="text" class="form-control" placeholder="Enter your firstname">
-                      </div><!-- col -->
-                    </div><!-- row -->
-  
+                 
              
             </div>
   
@@ -183,11 +180,11 @@
 
          
 
-          <hr class="mg-y-10 ">
+           <hr class="mg-y-20 ">
 
 
-          <div class="table-responsive">
-            <table class="table table-hover mg-b-0">
+          <div class="table-responsive mg-b-10">
+            <table class="table table-hover table-bordered ">
                 <thead>
                     <tr>
                       <th>Enrollment No.</th>
