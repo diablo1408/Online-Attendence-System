@@ -54,7 +54,7 @@
         <div class="bd bd-t-0 tab-content">
            <div id="tabCont1" class="tab-pane active show">
                <div class="row row-sm">
-                   <div class="col-sm">
+                   <div class="col-md">
                    <div class="card bg-gray-200 bd-0">
                       <div class="card-body">
                        <h5 class="card-title tx-dark tx-medium mg-b-10">The Card Title</h5>
@@ -62,6 +62,12 @@
                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                        <a href="#" class="card-link">Card link</a>
                        <a href="#" class="card-link">Another link</a>
+                       <button data-toggle="dropdown" class="btn btn-indigo ">Dropdown <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
+                       <div class="dropdown-menu">
+                         <a href="" class="dropdown-item">Add Attendence(Theory)</a>
+                         <a href="" class="dropdown-item">Add Attendence(Practical)</a>
+                         
+                        </div><!-- dropdown-menu -->
                      </div>
                    </div>
                  </div>
