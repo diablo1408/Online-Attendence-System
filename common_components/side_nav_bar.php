@@ -25,30 +25,23 @@
       </div><!-- az-iconbar-header -->
       <div class="az-iconbar-body">
         <div id="asideDashboard" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Dashboard</h6>
-          <!-- <small class="az-iconbar-text">Choose between layouts to experience different look and feel for your projects.</small> -->
+          <h6 class="az-iconbar-title">DASHBOARD</h6>
+          <small class="az-iconbar-text"></small>
+          <nav class="nav">
+          <h6 class="az-iconbar-title">Teacher</h5>
+            <a href="../teacher/attendance_details.php" class="nav-link">Schedule Classes</a>
+             <a href="../teacher/view_report.php" class="nav-link">Attendance Report</a>
+             <h6 class="az-iconbar-title">Admin</h5>
+             <a href="../admin/add_user.php" class="nav-link">Add Account</a>
+             <a href="../admin/add_student.php" class="nav-link">Admin Attendance Report</a>
+             <a href="../admin/view_report_admin.php" class="nav-link">Attendance Report</a>
+            
+         
+          </nav>
 
           
         </div>
-        <div id="asideAppsPages" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Attendence</h6>
-          <small class="az-iconbar-text"></small>
-          <nav class="nav">
-            <a href="attendence_details.php" class="nav-link">Schedule Classes</a>
-            <a href="attendence_form.php" class="nav-link">Take Attendence</a>
-         
-          </nav>
-        </div><!-- az-iconbar-pane -->
-        <div id="asideCharts" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Attedence Report</h6>
-          <small class="az-iconbar-text"></small>
-          <nav class="nav">
-          <a href="view_report.php" class="nav-link">Schedule Classes</a>
-            
-            
-         
-          </nav>
-        </div>
+       
       </div><!-- az-iconbar-body -->
     </div><!-- az-iconbar-aside -->
  

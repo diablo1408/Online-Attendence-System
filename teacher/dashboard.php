@@ -43,13 +43,24 @@
   </head>
   <body class="az-body az-light">
 
-     <?php include ('./common_components/side_nav_bar.php');?>
+     <?php include('../common_components/side_nav_bar.php');?>
+     
+ 
     
      <div class="az-content az-content-dashboard-six">
-     <?php include('./common_components/header.php');?>
+     <?php include('../common_components/header.php');?>
+     
     
 
       <div class="az-content-body az-content-body-dashboard-six">
+      <div class="  card bd-0">
+                  <div class="card-header bg-white-400 bd-b-0-f pd-b-0">
+                    <nav class="nav nav-tabs">
+                      <a class="nav-link active" data-toggle="tab" href="#tabCont1">Active Classes</a>
+                      <a class="nav-link" data-toggle="tab" href="#tabCont2">Previous Classes</a>
+                     
+                  </div>
+           
        
         <div class="bd bd-t-0 tab-content">
            <div id="tabCont1" class="tab-pane active show">
@@ -101,8 +112,12 @@
         <!-- your content goes here -->
       </div><!-- az-content-body -->
 
-      <?php include ('./common_components/footer.php');?>
-      </div><!-- az-content -->
+     
+    
+     </div><!-- az-content -->
+      <?php include('../common_components/footer.php');?>
+     
+ 
      
 
      

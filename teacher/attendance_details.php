@@ -1,3 +1,4 @@
+<?php include('../include/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +30,7 @@
   <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
   <meta name="author" content="ThemePixels">
 
-  <title>Add_User</title>
+  <title>MYattend.-Schedule classes</title>
 
   <!-- vendor css -->
   <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -38,45 +39,51 @@
 
   <!-- azia CSS -->
   <link rel="stylesheet" href="../css/azia.css">
+  <link rel="stylesheet" href="../css/customcss.css">
 
 </head>
 
 <body class="az-body az-light">
- 
-    <?php include('../common_components/side_nav_bar.php');?>
-     
-  <div class="az-content az-content-dashboard-six">
-    <?php include('../common_components/header.php');?> 
 
+  <?php include('../common_components/side_nav_bar.php'); ?>
+
+  <div class="az-content az-content-dashboard-six">
+    <?php include('../common_components/header.php'); ?>
 
 
     <div class="az-content-body az-content-body-dashboard-six">
-      <p class="mg-b-20 mg-lg-b-30"></p>
-      <div class="az-content ">
-        <h2 align="center" class="az-content-title">Student Registration</h2>
+      <!--  <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
+        <p class="mg-b-20 mg-lg-b-30"></p> -->
+      <div class="az-content">
+        <!-- <div class="container "> -->
+        <!-- <div class="az-content-body"> -->
 
-        <div class="az-content-label mg-b-10">Enter Student Data</div>
 
-        <form action="add_student_table.php" method="post" id="form_student"></form>
-        <div class="card card-body pd-20">
-          <div class="row row-sm align-items-center mg-10">
-            <div class="col-md-2">
-              <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Year :</label>
+
+        <!-- <hr class="mg-y-30 mg-lg-y-50"> -->
+
+        <div class="az-content-label mg-b-5">
+          <font size="6">Attendance Details</font>
+        </div>
+
+        <form id="form1" method="post" action="attendence_form.php"></form>
+        <div class="pd-30 pd-sm-40 bg-gray-200 ">
+          <div class="row row-xs align-items-center mg-b-20">
+            <div class="col-md-4">
+              <label class="form-label mg-b-0 font-weight-bold">Academic Year</label>
             </div><!-- col -->
-            <div class=" mg-t-5 mg-md-t-0">
-              <select form="form_student" name="year" form="form1" class="form-control">
-                <option value="0" selected>Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
+            <div class="col-md-8 mg-t-5 mg-md-t-0">
+              <input form="form1" type="text" class="form-control" placeholder="Enter Academic Year" value="<?php echo date('Y'); ?>" disabled>
             </div><!-- col -->
-            <div class="col-md-2">
-              <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Stream :</label>
+          </div><!-- row -->
+
+
+          <div class="row row-xs align-items-center mg-b-20">
+            <div class="col-md-4">
+              <label class="form-label mg-b-0 font-weight-bold">Stream</label>
             </div><!-- col -->
-            <div class=" mg-t-5 mg-md-t-0">
-              <select form="form_student" name="stream" form="form1" class="form-control">
+            <div class="col-md-8 mg-t-5 mg-md-t-0">
+              <select name="stream" form="form1" class="form-control">
                 <option value="0" selected>Select</option>
                 <option value="CSE">CSE</option>
                 <option value="MAE">MAE</option>
@@ -92,41 +99,75 @@
 
 
 
-          <div class="row row-sm align-items-center mg-10">
-            <div class="col-md-2">
-              <label class="form-label mg-b-0 font-weight-bold" style="font-size:medium">Total Students:</label>
+          <div class="row row-xs align-items-center mg-b-20">
+            <div class="col-md-4">
+              <label class="form-label mg-b-0 font-weight-bold">Section</label>
             </div><!-- col -->
-            <div class=" mg-t-5 mg-md-t-0">
-              <input form="form_student" type="text" class="form-control" placeholder="Enter Total Students" name="number">
-            </div><!-- col -->
-            <div class="col-md-2">
-              <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Section:</label>
-            </div><!-- col -->
-            <div class=" mg-t-5 mg-md-t-0 ">
-              <input form="form_student" type="text" class="form-control" placeholder="Enter Section" name="section">
+            <div class="col-md-8 mg-t-5 mg-md-t-0">
+              <select name="section" form="form1" class="form-control">
+                <option value="0" selected>Select</option>
+                <?php
+                $q = "SELECT sections FROM users WHERE id='$teacher_id'";
+                $e = mysqli_query($db, $q);
+                $r = mysqli_fetch_array($e);
+                $sec = explode(",", $r['sections']);
+                for ($i = 0; $i < sizeof($sec); $i++) {
+                ?>
+                  <option value="<?php echo $sec[$i]; ?>"><?php echo $sec[$i]; ?></option>
+                <?php } ?>
+              </select>
             </div><!-- col -->
           </div><!-- row -->
 
+          <div class="row row-xs align-items-center mg-b-20">
+            <div class="col-md-4">
+              <label class="form-label mg-b-0 font-weight-bold">Type</label>
+            </div><!-- col -->
+            <div class="col-md-8 mg-t-5 mg-md-t-0">
+              <select name="type" form="form1" class="form-control">
+                <option value="0" selected>Select</option>
+                <option value="1">Theory</option>
+                <option value="2">Practical</option>
+              </select>
+            </div><!-- col -->
+          </div><!-- row -->
+          <div class="row row-xs align-items-center mg-b-20">
+            <div class="col-md-4">
+              <label class="form-label mg-b-0 font-weight-bold">Subject</label>
+            </div><!-- col -->
+            <div class="col-md-8 mg-t-5 mg-md-t-0">
+              <select name="subject" form="form1" class="form-control">
+                <option value="0" selected>Select</option>
+                <?php
+                $q = "SELECT subjects FROM users WHERE id='$teacher_id'";
+                $e = mysqli_query($db, $q);
+                $r = mysqli_fetch_array($e);
+                $sub = explode(",", $r['subjects']);
+                for ($i = 0; $i < sizeof($sub); $i++) {
+                ?>
+                  <option value="<?php echo $sub[$i]; ?>"><?php echo $sub[$i]; ?></option>
+                <?php } ?>
+              </select>
+            </div><!-- col -->
+          </div><!-- row -->
 
-
+          <button form="form1" class="btn btn-az-primary pd-x-30 mg-r-5">Save</button>
+          <button class="btn btn-dark pd-x-30">Cancel</button>
         </div>
 
-        <hr class="mg-y-20 ">
-
-
-        <!-- table-responsive -->
-
-        <div class="mg-lg-b-30"></div>
-
-        <button class="btn btn-az-primary pd-x-30 mg-r-5" name="submit" type="submit" form="form_student">Save Data</button>
-        <button class="btn btn-dark pd-x-30">Cancel</button>
-
-      </div>
-    </div>
+        <!-- your content goes here -->
+      </div><!-- az-content-body -->
 
 
 
-    <?php include('../common_components/footer.php');?>
+
+    </div><!-- az-content -->
+    <?php include('../common_components/footer.php'); ?>
+
+
+
+
+
 
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -184,7 +225,6 @@
 
       });
     </script>
-
 </body>
 
 </html>

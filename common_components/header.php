@@ -7,14 +7,7 @@
           </div><!-- az-header-left -->
           <div class="az-header-center">
           
-          <div class="  card bd-0">
-                  <div class="card-header bg-white-400 bd-b-0-f pd-b-0">
-                    <nav class="nav nav-tabs">
-                      <a class="nav-link active" data-toggle="tab" href="#tabCont1">Active Classes</a>
-                      <a class="nav-link" data-toggle="tab" href="#tabCont2">Previous Classes</a>
-                     
-                  </div>
-           
+         
           </div><!-- az-header-center -->
           <div class="az-header-right">
             <!-- <div class="az-header-message">
@@ -31,7 +24,7 @@
                   <div class="az-img-user">
                     <img src="https://via.placeholder.com/500x500" alt="">
                   </div><!-- az-img-user -->
-                  <h6>Aziana Pechon</h6>
+                  <h6><?php echo ucfirst($fname);?></h6>
                   <span>Premium Member</span>
                 </div><!-- az-header-profile -->
 

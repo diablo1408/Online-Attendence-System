@@ -1,3 +1,6 @@
+<?php
+include('../include/session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,11 +48,11 @@
 
   </head>
   <body class="az-body az-light">
-    <?php include ('./common_components/side_nav_bar.php');?>  
+    <?php include ('../common_components/side_nav_bar.php');?>  
 
     <div class="az-content az-content-dashboard-six">
-      <?php include('./common_components/header.php');?>
-    
+      <?php include('../common_components/header.php');?>
+    <form action="edit_profile_data.php" method="post"  id="profile" ></form>
 
       <div class="az-content-body az-content-body-dashboard-six">
         <p class="mg-b-20 mg-lg-b-30"></p> 
@@ -61,26 +64,18 @@
               <div>
                 <div class="row row-xs align-items-center mg-b-10">
                   <div class="col-md-1">
-                    <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
+                    <label class="form-control-label">Firstname:</label>
                   </div><!-- col -->
                   <div class="col-md-4 mg-t-5 mg-md-t-0">
-                    <input id="firstname" class="form-control" name="firstname" placeholder="Enter firstname" type="text" required>
+                    <input id="firstname" class="form-control" form="profile" name="fname" value="<?php echo ucfirst($fname);?>" placeholder="Enter firstname" type="text">
                   </div><!-- col -->
                 </div><!-- row -->
                 <div class="row row-xs align-items-center mg-b-10">
                   <div class="col-md-1">
-                    <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
+                    <label class="form-control-label">Lastname:</label>
                   </div><!-- col -->
                   <div class="col-md-4 mg-t-5 mg-md-t-0">
-                    <input id="lastname" class="form-control" name="lastname" placeholder="Enter lastname" type="text" required>
-                  </div><!-- col -->
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-10">
-                  <div class="col-md-1">
-                    <label class="form-control-label">Address: <span class="tx-danger">*</span></label>
-                  </div><!-- col -->
-                  <div class="col-md-4 mg-t-5 mg-md-t-0">
-                    <input id="address" class="form-control" name="address" placeholder="Enter Address" type="text" required>
+                    <input id="lastname" class="form-control" form="profile" name="lname" value="<?php echo ucfirst($lname);?>" placeholder="Enter lastname" type="text">
                   </div><!-- col -->
                 </div><!-- row -->
               </div>
@@ -90,18 +85,10 @@
               <div>
                 <div class="row row-xs align-items-center mg-b-10">
                   <div class="col-md-1">
-                    <label class="form-control-label">Contact No.: <span class="tx-danger">*</span></label>
+                    <label class="form-control-label">Email:</label>
                   </div><!-- col -->
                   <div class="col-md-4 mg-t-5 mg-md-t-0">
-                    <input id="contact" class="form-control" name="contact" placeholder="Enter Contact Number" type="number" required>
-                  </div><!-- col -->
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-10">
-                  <div class="col-md-1">
-                    <label class="form-control-label">Email: <span class="tx-danger">*</span></label>
-                  </div><!-- col -->
-                  <div class="col-md-4 mg-t-5 mg-md-t-0">
-                    <input id="email" class="form-control" name="email" placeholder="Enter email address" type="email" required>
+                    <input id="email" class="form-control" form="profile" name="email" value="<?php echo $email;?>" placeholder="Enter email address" type="text" required>
                   </div><!-- col -->
                 </div><!-- row -->
               </div>
@@ -111,15 +98,17 @@
               <div>
                 <div class="row row-xs  align-items-center mg-b-10">
                   <div class="col-md">
-                    <label class="form-label mg-b-0">Subjects:</label>
+                    <label class="form-label mg-b-0">Subjects: (Hold CTRL and Select)</label>
                    
                      
-                      <select class="form-control select2-no-search" multiple="multiple">
-                        <option value="Firefox" selected>Firefox</option>
-                        <option value="Chrome">Chrome</option>
-                        <option value="Safari">Safari</option>
-                        <option value="Opera">Opera</option>
-                        <option value="Internet Explorer">Internet Explorer</option>
+                      <select form="profile" class="form-control select2-no-search" multiple="multiple" name="subject[]">
+                        <?php 
+                  $q="SELECT short_name FROM subject";
+                  $e=mysqli_query($db,$q);
+                  while ($r=mysqli_fetch_array($e)) {
+                  ?>
+                        <option value="<?php echo $r['short_name'];?>"><?php echo $r['short_name'];?></option>
+                      <?php }?>
                       </select>
                     
                   </div><!-- col -->
@@ -132,34 +121,29 @@
                   </div><!-- col -->
                 </div><!-- row -->
                 <div>
+                  <?php 
+                  $q="SELECT section FROM section";
+                  $e=mysqli_query($db,$q);
+                  while ($r=mysqli_fetch_array($e)) {
+                
+                  ?>
                   <div class="col-lg-3 mg-l-50">
                     <label class="ckbox">
-                      <input type="checkbox"><span>T1</span>
+                      <input form="profile" type="checkbox" name="section[]" value="<?php echo $r['section'];?>" ><span><?php echo $r['section'];?></span>
                     </label>
                   </div>
-                  <div class="col-lg-3 mg-l-50">
-                    <label class="ckbox">
-                      <input type="checkbox"><span>T2</span>
-                    </label>
-                  </div>
-                  <div class="col-lg-3 mg-l-50">
-                    <label class="ckbox">
-                      <input type="checkbox"><span>T3</span>
-                    </label>
-                  </div>
-                  <div class="col-lg-3 mg-l-50">
-                    <label class="ckbox">
-                      <input type="checkbox"><span>T4</span>
-                    </label>
-                  </div>
+                <?php }?>
+
+
                 </div>
               </div>
             </section>
           </div>
-          <hr class="mg-y-30 mg-lg-y-50 bd-transparent">          
+          <hr class="mg-y-30 mg-lg-y-50 bd-transparent">     
+          <button class="btn btn-success" name="submit" type="submit" form="profile">Submit</button>     
         </div>
       </div>
-      <?php include ('./common_components/footer.php');?>
+      <?php include ('../common_components/footer.php');?>
     </div>
 
    
@@ -193,44 +177,7 @@
         });
 
      
-      //   $('#wizard1').steps({
-      //     headerTag: 'h3',
-      //     bodyTag: 'section',
-      //     autoFocus: true,
-      //     titleTemplate: '<span class="number">#index#</span> <span class="title">#title#</span>',
-      //     onStepChanging: function (event, currentIndex, newIndex) {
-      //       if(currentIndex < newIndex) {
-      //         // Step 1 form validation
-      //         if(currentIndex === 0) {
-      //           var fname = $('#firstname').parsley();
-      //           var lname = $('#lastname').parsley();
-      //           var addr  = $('#address').parsley();
-
-      //           if(fname.isValid() && lname.isValid() && addr.isValid()) {
-      //             return true;
-      //           } else {
-      //             fname.validate();
-      //             lname.validate();
-      //             addr.validate();
-      //           }
-      //         }
-
-      //         // Step 2 form validation
-      //         if(currentIndex === 1) {
-      //           var email = $('#email').parsley();
-      //           var contact=$('#contact').parsley();
-                
-      //           if(email.isValid() && contact.isValid()) {
-      //             return true;
-      //           } else { email.validate(); 
-      //           contact.validate();
-      //           }
-      //         }
-      //       // Always allow step back to the previous step even if the current step is not valid.
-      //       } else { return true; }
-      //     }
-      //   });
-      // });
+      
     </script>
 
   </body>

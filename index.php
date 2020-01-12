@@ -28,7 +28,7 @@
     <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
     <meta name="author" content="ThemePixels">
 
-    <title>Login-ADGITMAttendence</title>
+    <title>Login-ADGITMAttendance</title>
 
     <!-- vendor css -->
     <link href="./lib/fontawesome-free/css/all.min.css" rel="stylesheet">

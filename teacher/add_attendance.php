@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
 	$type=mysqli_real_escape_string($db_new,$_POST['type']);
 	$subject=mysqli_real_escape_string($db_new,$_POST['subject']);
 	$curdt=date('y-m-d');
+	$i=0;
 
 
 	
@@ -24,9 +25,17 @@ if (isset($_POST['submit'])) {
     $val = ($val == "1")?1:0;
     $query="INSERT INTO ".$table." (enrollment,stream,section,dt,status) VALUES($enr,'$stream','$section','$curdt','$val')";
     $execute=mysqli_query($db_new,$query);
-    header('Location: dashboard.php');
+    $i=1;   
 
   }
+   if ($i=1) {
+    	$f_name=ucfirst($fname);
+    	$q="INSERT INTO logs (dt,section,subject,marked_by,type) VALUES ('$curdt','$section','$subject',$teacher_id,$type)";
+    	$exe=mysqli_query($db,$q);
+    	if ($exe) {
+    	header('Location: dashboard.php');
+    	}
+    }
 }
 
 

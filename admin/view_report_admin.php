@@ -44,92 +44,18 @@
 
   </head>
   <body class="az-body az-light">
-    <div class="az-iconbar">
-      <a href="dashboard.html" class="az-iconbar-logo"><i class="typcn typcn-chart-bar-outline"></i></a>
-      <nav class="nav">
-        
-        <a href="#asideDashboard" class="nav-link "><i class="typcn typcn-device-laptop"></i></a>
-       <a href="#asideAppsPages" class="nav-link active"><i class="typcn typcn-folder-add"></i></a>
-        <a href="#asideCharts" class="nav-link"><i class="typcn typcn-chart-line-outline"></i></a>
-        <a href="#asideTables" class="nav-link"><i class="typcn typcn-th-large-outline"></i></a>
-      </nav>
-      <!-- az-iconbar-bottom -->
-    </div><!-- az-iconbar -->
-    <div class="az-iconbar-aside">
-      <div class="az-iconbar-header">
-       
-        <a href="dashboard.html" class="az-logo">MYatten<span>d</span>.</a>
-        <a href="" class="az-iconbar-toggle-menu">
-          <i class="icon ion-md-arrow-back"></i>
-          <i class="icon ion-md-close"></i>
-        </a>
-      </div><!-- az-iconbar-header -->
-      <div class="az-iconbar-body">
-        <div id="asideDashboard" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title">Dashboard</h6>
-         
-
-         
-        </div>
-       
-        <div id="asideAppsPages" class="az-iconbar-pane">
-          <h6 class="az-iconbar-title"></h6>
-          <small class="az-iconbar-text"></small>
-          <nav class="nav">
-            <a href="" class="nav-link active"></a>
-            <a href="" class="nav-link"></a>
-         
-          </nav>
-        </div><!-- az-iconbar-pane -->
-      </div><!-- az-iconbar-body -->
-    </div><!-- az-iconbar-aside -->
-
+   
+     <?php include('../common_components/side_nav_bar.php');?>
     <div class="az-content az-content-dashboard-six">
-      <div class="az-header az-header-dashboard-six">
-        <div class="container-fluid">
-          <div class="az-header-left">
-            <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
-          </div><!-- az-header-left -->
-          <div class="az-header-center">
-            <input type="search" class="form-control" placeholder="Search for anything...">
-            <button class="btn"><i class="fas fa-search"></i></button>
-          </div><!-- az-header-center -->
-          <div class="az-header-right">
-           <!--  <div class="az-header-message">
-              <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
-            </div><-- az-header-message --> 
-           
-            <div class="dropdown az-profile-menu">
-              <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
-              <div class="dropdown-menu">
-                <div class="az-dropdown-header d-sm-none">
-                  <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
-                </div>
-                <div class="az-header-profile">
-                  <div class="az-img-user">
-                    <img src="https://via.placeholder.com/500x500" alt="">
-                  </div><!-- az-img-user -->
-                  <h6>Aziana Pechon</h6>
-                  <span>Premium Member</span>
-                </div><!-- az-header-profile -->
-
-                <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
-              </div><!-- dropdown-menu -->
-            </div>
-          </div><!-- az-header-right -->
-        </div><!-- container -->
-      </div><!-- az-header -->
+      <?php include('../common_components/header.php');?>
+     
 
       <div class="az-content-body az-content-body-dashboard-six">
         <p class="mg-b-20 mg-lg-b-30"></p> 
         <div class="az-content-body">
           <h2 class="az-content-title">Result</h2>
-          <div class="az-content-label mg-b-10">Attendence Data</div>
-          <div>
+          <div class="az-content-label mg-b-10" style="font-size: medium;">Attendence Data</div>
+          <div class="card card-body">
             <div class="row row-xs align-items-center mg-b-10">
               <div class="col-md-1" >
                <label class="form-label mg-b-0">Rollno:</label>
@@ -186,12 +112,8 @@
         </div>
       </div>
      </div>
-    <div class="az-footer">
-      <div class="container">
-        <span>&copy;  ADGITM </span>
-        <span>Designed by: Dibwab</span>
-      </div><!-- container -->
-    </div><!-- az-footer -->
+     <?php include('../common_components/footer.php');?>
+     
 
     
     <script src="../lib/jquery/jquery.min.js"></script>
