@@ -73,7 +73,7 @@
                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                        <a href="#" class="card-link">Card link</a>
                        <a href="#" class="card-link">Another link</a>
-                       <button data-toggle="dropdown" class="btn btn-indigo ">Dropdown <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
+                       <button data-toggle="dropdown" class="btn btn-indigo "> <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
                        <div class="dropdown-menu">
                          <a href="" class="dropdown-item">Add Attendence(Theory)</a>
                          <a href="" class="dropdown-item">Add Attendence(Practical)</a>
@@ -90,7 +90,7 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
-                        <button data-toggle="dropdown" class="btn btn-indigo ">Dropdown <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
+                        <button data-toggle="dropdown" class="btn btn-indigo "> <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
                            <div class="dropdown-menu">
                              <a href="" class="dropdown-item">Profile</a>
                              <a href="" class="dropdown-item">Activity Logs</a>

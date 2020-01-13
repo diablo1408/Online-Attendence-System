@@ -62,7 +62,7 @@
 
       <div class="row row-sm">
         <div class="col-md mg-b-20 mg-t-20 mg-md-t-0">
-          <div class="card card-body bg-gray-200 bd-0">
+          <div class="card card-body bg-purple-dark tx-white bd-0">
             <h5 class="card-title tx-dark tx-medium mg-b-10">No.of Practicals</h5>
             <p class="card-subtitle mg-b-15">This is the card subtitle</p>
 
@@ -83,21 +83,21 @@
           </div><!-- card -->
         </div>
         <div class="col-md mg-t-20 mg-b-20 mg-md-t-0">
-          <div class="card card-body bg-primary tx-white bd-0">
+          <div class="card card-body bg-success tx-white bd-0">
             <h5 class="card-title tx-dark tx-medium mg-b-10">Semester</h5>
             <p class="card-subtitle mg-b-15">This is the card subtitle</p>
 
           </div><!-- card -->
         </div>
         <div class="col-md mg-t-20 mg-b-20 mg-md-t-0">
-          <div class="card card-body bg-primary tx-white bd-0">
+          <div class="card card-body bg-teal tx-white bd-0">
             <h5 class="card-title tx-dark tx-medium mg-b-10">Subject</h5>
             <p class="card-subtitle mg-b-15">This is the card subtitle</p>
 
           </div><!-- card -->
         </div><!-- col -->
       </div><!-- row -->
-      <div class="row row-sm mg-b-20">
+      <div class="row row-sm mg-b-20 bg-gray-200 pd-10 bd-1">
         <div class="col-sm-4">
           <div class="az-content-label mg-b-5">Filter</div>
 
@@ -125,7 +125,7 @@
       </div>
 
 
-      <div class="table-responsive mg-5 pd-5">
+      <div class="table-responsive mg-5 pd-5 bg-white-8">
         <table id="datatable1" class="table table-hover table-bordered  display responsive nowrap">
           <thead>
             <tr>

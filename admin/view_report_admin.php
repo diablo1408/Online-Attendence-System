@@ -41,6 +41,7 @@
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="../css/azia.css">
+    <link rel="stylesheet" href="../css/customcss.css">
 
   </head>
   <body class="az-body az-light">
@@ -53,12 +54,12 @@
       <div class="az-content-body az-content-body-dashboard-six">
         <p class="mg-b-20 mg-lg-b-30"></p> 
         <div class="az-content-body">
-          <h2 class="az-content-title">Result</h2>
-          <div class="az-content-label mg-b-10" style="font-size: medium;">Attendence Data</div>
-          <div class="card card-body">
+         
+          <div class="az-content-label mg-b-10" style="font-size: large;" align="center">Attendence Report</div>
+          <div class="card card-body tx-dark tx-medium ">
             <div class="row row-xs align-items-center mg-b-10">
               <div class="col-md-1" >
-               <label class="form-label mg-b-0">Rollno:</label>
+               <label class="form-label mg-b-0 f" style="font-size: medium;">Rollno:</label>
               </div><!-- col -->
              <div class="col-md-4 mg-t-5 mg-md-t-0">
                <input type="number" class="form-control" placeholder="Enter RollNo">
@@ -66,7 +67,7 @@
             </div><!-- row -->
             <div class="row row-xs align-items-center mg-b-10">
               <div class="col-md-1">
-                <label class="form-label mg-b-0">Stream:</label>
+                <label class="form-label mg-b-0" style="font-size: medium;">Stream:</label>
               </div><!-- col -->
               <div class="col-md-4 mg-t-5 mg-md-t-0">
                 <input type="text" class="form-control" placeholder="Enter Stream">
@@ -74,7 +75,7 @@
             </div><!-- row -->
             <div class="row row-xs align-items-center mg-b-10">
               <div class="col-md-1" >
-               <label class="form-label mg-b-0">Section:</label>
+               <label class="form-label mg-b-0" style="font-size: medium;">Section:</label>
               </div><!-- col -->
              <div class="col-md-4 mg-t-5 mg-md-t-0">
                <input type="text" class="form-control" placeholder="Enter Section">
@@ -82,7 +83,7 @@
             </div><!-- row -->
             <div class="row row-xs align-items-center mg-b-10">
               <div class="col-md-1">
-                <label class="form-label mg-b-0">Subject:</label>
+                <label class="form-label mg-b-0" style="font-size: medium;">Subject:</label>
               </div><!-- col -->
               <div class="col-md-4 mg-t-5 mg-md-t-0 ">
                 <input type="text" class="form-control" placeholder="Enter Subject">
@@ -90,13 +91,13 @@
             </div><!-- row -->
             <div class="row row-xs align-items-center mg-b-10">
               <div class="col-md-1" >
-               <label class="form-label mg-b-0">From:</label>
+               <label class="form-label mg-b-0" style="font-size: medium;">From:</label>
               </div><!-- col -->
              <div class="col-md-4 mg-t-5 mg-md-t-0">
                <input type="date" class="form-control" placeholder="Enter Date">
              </div><!-- col -->
              <div class="col-md-1" >
-              <label class="form-label mg-b-0 mg-l-20">To:</label>
+              <label class="form-label mg-b-0 mg-l-20" style="font-size: medium;">To:</label>
              </div><!-- col -->
              <div class="col-md-4 mg-t-5 mg-md-t-0">
               <input type="date" class="form-control" placeholder="Enter Date">
@@ -105,7 +106,7 @@
             <div class="row row-xs align-items-center mg-b-20">
               <!-- col -->
             </div><!-- row -->
-           <a href="report_table.php"> <button class="btn btn-az-primary pd-x-30 mg-r-5 mg-b-50" >Load Data</button>  </a>
+           <a href="report_table.php"> <button class="btn btn-az-primary pd-x-30 mg-r-5 " >Load Data</button>  </a>
           </div>
          
          <hr class="mg-y-30 mg-lg-y-50">

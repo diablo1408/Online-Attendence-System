@@ -17,8 +17,8 @@
     </div><!-- az-iconbar -->
     <div class="az-iconbar-aside">
       <div class="az-iconbar-header">
-        <a href="dashboard.php" class="az-logo">MYatten<span>d</span>.</a>
-        <a href="" class="az-iconbar-toggle-menu">
+        <a href="../teacher/dashboard.php" class="az-logo">MYatten<span>d</span>.</a>
+        <a href="../teacher/dashboard.php" class="az-iconbar-toggle-menu">
           <i class="icon ion-md-arrow-back"></i>
           <i class="icon ion-md-close"></i>
         </a>
@@ -29,12 +29,12 @@
           <small class="az-iconbar-text"></small>
           <nav class="nav">
           <h6 class="az-iconbar-title">Teacher</h5>
-            <a href="../teacher/attendance_details.php" class="nav-link">Schedule Classes</a>
-             <a href="../teacher/view_report.php" class="nav-link">Attendance Report</a>
+            <a href="../teacher/attendance_details.php" class="nav-link"><img src="..\images\account-group.png" alt="user"> Schedule Classes</a>
+             <a href="../teacher/view_report.php" class="nav-link"><img src="..\images\file-chart.png"  >Attendance Report</a>
              <h6 class="az-iconbar-title">Admin</h5>
-             <a href="../admin/add_user.php" class="nav-link">Add Account</a>
-             <a href="../admin/add_student.php" class="nav-link">Admin Attendance Report</a>
-             <a href="../admin/view_report_admin.php" class="nav-link">Attendance Report</a>
+             <a href="../admin/add_user.php" class="nav-link"><img src="..\images\account-badge-horizontal.png"  >Add Account</a>
+             <a href="../admin/add_student.php" class="nav-link">Add Student</a>
+             <a href="../admin/view_report_admin.php" class="nav-link"><img src="..\images\file-chart.png"  >Attendance Report</a>
             
          
           </nav>
