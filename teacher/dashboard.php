@@ -35,6 +35,8 @@
     <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/line-awesome/css/line-awesome.css" rel="stylesheet">
+
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="..\css\azia.css">
@@ -53,22 +55,22 @@
     
 
       <div class="az-content-body az-content-body-dashboard-six">
-      <div class="  card bd-0">
+      <!-- <div class="  card bd-0">
                   <div class="card-header bg-white-400 bd-b-0-f pd-b-0">
                     <nav class="nav nav-tabs">
-                      <a class="nav-link active" data-toggle="tab" href="#tabCont1">Active Classes</a>
+                      <a class="nav-link active" data-toggle="tab" href="#tabCont1"> Active Classes</a>
                       <a class="nav-link" data-toggle="tab" href="#tabCont2">Previous Classes</a>
                      
-                  </div>
+                  </div> -->
            
        
-        <div class="bd bd-t-0 tab-content">
+        <!-- <div class="bd bd-t-0 tab-content">
            <div id="tabCont1" class="tab-pane active show">
                <div class="row row-sm">
                    <div class="col-md">
                    <div class="card bg-gray-200 bd-0">
                       <div class="card-body">
-                       <h5 class="card-title tx-dark tx-medium mg-b-10">The Card Title</h5>
+                       <h5 class="card-title tx-dark tx-medium mg-b-10">T</h5>
                        <p class="card-subtitle mg-b-15">This is the card subtitle</p>
                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                        <a href="#" class="card-link">Card link</a>
@@ -78,8 +80,8 @@
                          <a href="" class="dropdown-item">Add Attendence(Theory)</a>
                          <a href="" class="dropdown-item">Add Attendence(Practical)</a>
                          
-                        </div><!-- dropdown-menu -->
-                     </div>
+                        </div>dropdown-menu -->
+                     <!-- </div>
                    </div>
                  </div>
                  <div class="col-md">
@@ -96,18 +98,18 @@
                              <a href="" class="dropdown-item">Activity Logs</a>
                              <a href="" class="dropdown-item">Account Settings</a>
                              <a href="" class="dropdown-item">Logout</a>
-                            </div><!-- dropdown-menu -->
-                      </div>
+                            </div><-- dropdown-menu -->
+                      <!-- </div>
                     </div>
                   </div>
                
               </div>
             
             
-          </div><!-- tab-pane -->
-          <div id="tabCont2" class="tab-pane">This is tab content 2...</div>
+          <-- </div><-- tab-pane -->
+          <!-- <div id="tabCont2" class="tab-pane">This is tab content 2...</div> -->
           
-        </div>
+        <!-- </div> -->
 
         <!-- your content goes here -->
       </div><!-- az-content-body -->

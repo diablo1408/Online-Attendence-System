@@ -39,6 +39,7 @@
   <link href="../lib/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
   <link href="../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet">
   <link href="../lib/select2/css/select2.min.css" rel="stylesheet">
+  <link href="../lib/line-awesome/css/line-awesome.css" rel="stylesheet">
 
   <!-- azia CSS -->
   <link rel="stylesheet" href="..\css\azia.css">

@@ -15,24 +15,24 @@
             </div><-- az-header-message --> 
             
             <div class="dropdown az-profile-menu">
-              <a href="" class="az-img-user"><img src="..\images\blank-profile-picture-973460_640.png" alt="user"></a>
+              <a href="" class="az-img-user"><img src="..\images\blank-profile-picture-973460_640.png" alt=""></a>
               <div class="dropdown-menu">
                 <div class="az-dropdown-header d-sm-none">
                   <a href="" class="az-header-arrow"></a>
                 </div>
-                <div class="az-header-profile">
+                <div class="az-header-profile pd-5">
                   <div class="az-img-user">
-                  <img src="..\images\blank-profile-picture-973460_640.png" alt="user">
+                  <img src="..\images\blank-profile-picture-973460_640.png" alt="">
                   </div><!-- az-img-user -->
                   <h6><?php echo ucfirst($fname);?></h6>
-                  <span>Premium Member</span>
+                 
                 </div><!-- az-header-profile -->
 
                 <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
                 <a href="edit_profile.php" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
                 <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
-                <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                <a href="../teacher/logout.php" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+               
+                <a href="../logout.php" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
               </div><!-- dropdown-menu -->
             </div>
           </div><!-- az-header-right -->

@@ -57,6 +57,7 @@ $e=mysqli_query($db,$q);
     <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/line-awesome/css/line-awesome.css" rel="stylesheet">
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="../css/azia.css">
@@ -68,12 +69,12 @@ $e=mysqli_query($db,$q);
   </head>
   <body class="az-body az-light">
 
-    <?php include ('./common_components/side_nav_bar.php');?>
+    <?php include ('../common_components/side_nav_bar.php');?>
     
     <div class="az-content az-content-dashboard-six">
-     <?php include ('./common_components/header.php');?>  
+     <?php include ('../common_components/header.php');?>  
 
-      <form method="post" action="add_attendence.php" id="form1"></form>
+      <form method="post" action="add_attendance.php" id="form1"></form>
         <input type="text" form="form1" value="<?php echo $stream;?>" name="stream" hidden>
         <input type="text" form="form1" value="<?php echo $section;?>" name="section" hidden>
         <input type="text" form="form1" value="<?php echo $type;?>" name="type" hidden>
@@ -139,7 +140,7 @@ $e=mysqli_query($db,$q);
 
      
     
-      <?php include './common_components/footer.php';?>
+      <?php include '../common_components/footer.php';?>
      </div><!-- az-content -->
 
 
