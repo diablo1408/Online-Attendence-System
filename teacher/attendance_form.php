@@ -5,6 +5,7 @@ $section = mysqli_real_escape_string($db, $_POST['section']);
 $half = $_POST['half'];
 $type = mysqli_real_escape_string($db, $_POST['type']);
 $subject = mysqli_real_escape_string($db, $_POST['subject']);
+$date_of_lecture=mysqli_real_escape_string($db, $_POST['dateoflecture']);
 if (empty($stream)){
     $_SESSION['ErrorMessage']="Stream cannot be empty";
     header("LOCATION: ../teacher/attendance_details.php");
@@ -92,6 +93,7 @@ else {
     <input type="text" form="form1" value="<?php echo $section; ?>" name="section" hidden>
     <input type="text" form="form1" value="<?php echo $type; ?>" name="type" hidden>
     <input type="text" form="form1" value="<?php echo $subject; ?>" name="subject" hidden>
+    <input type="date" form="form1" value="<?php echo $date_of_lecture; ?>" name="date_of_lecture_fin" hidden>
 
 
     <div class="az-content-body az-content-body-dashboard-six">
@@ -100,15 +102,18 @@ else {
         <p class="center-a"><strong>ATTENDANCE SHEET</strong></p>
         <div class=" card card-body pd-10 mg-20 bg-gray-200 bd ">
 
-            <p class="pdl-10  form-text-size"><strong>Faculty: </strong> <?php echo ucfirst($fname); ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Subject: </strong><?php echo $subject; ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Section: </strong><?php echo $section; ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Date: </strong> <?php echo date('d-m-y'); ?></p>
-            <p class="pdl-10 form-text-size"><strong>Type: </strong> <?php if ($type == 1) {
+            <span class="pdl-10  form-text-size"><strong>Faculty: </strong> <?php echo ucfirst($fname); ?> </span>
+            <span class="pdl-10 form-text-size"><strong>Subject: </strong><?php echo $subject; ?> </span>
+            <span class="pdl-10 form-text-size"><strong>Section: </strong><?php echo $section; ?> </span>
+            <span class="pdl-10 form-text-size"><strong>Date of Lecture: </strong> <?php
+                $date_formatted=date_create($date_of_lecture);
+                echo date_format($date_formatted,"d-m-Y"); ?></span>
+            <span class="pdl-10 form-text-size"><strong>Date of Marking: </strong> <?php echo date('d-m-Y'); ?></span>
+            <span class="pdl-10 form-text-size"><strong>Type: </strong> <?php if ($type == 1) {
                     echo "Theory";
                 } else {
                     echo "Practical";
-                } ?></p>
+                } ?></span>
         </div>
         <div class="col">
             <input type="checkbox" onclick="toggle(this)"/>Mark All Present

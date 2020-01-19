@@ -1,6 +1,6 @@
 <?php include('../include/session.php');
-$q="SELECT * FROM logs ORDER BY id desc";
-$e=mysqli_query($db,$q);
+$q = "SELECT * FROM logs ORDER BY id desc";
+$e = mysqli_query($db, $q);
 
 ?>
 <!DOCTYPE html>
@@ -39,6 +39,9 @@ $e=mysqli_query($db,$q);
     <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="../lib/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="../lib/select2/css/select2.min.css" rel="stylesheet">
 
     <!-- azia CSS -->
     <link rel="stylesheet" href="../css/azia.css">
@@ -59,49 +62,47 @@ $e=mysqli_query($db,$q);
         <p class="center-a"><strong>ATTENDANCE LOGS</strong></p>
         &nbsp;
         <div class="col">
-            <div class="table-responsive  table-m card card-body bg-white-1">
-                <table class="table table-hover table-bordered mg-b-0  ">
-                    <thead>
+            <table id="datatable1" class="display responsive nowrap">
+                <thead>
+                <tr>
+                    <th class="wd-5p">S No.</th>
+                    <th class="wd-15p">Date of Marking</th>
+                    <th class="wd-15p">Date of Lecture</th>
+                    <th class="wd-20p">Faculty Name</th>
+                    <th class="wd-15p">Section</th>
+                    <th class="wd-10p">Subject</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $i = 1;
+                while ($DataRows = mysqli_fetch_array($e)) {
+                    $Date = $DataRows['dt'];
+                    $t_id = $DataRows['marked_by'];
+                    $date_of_lecture = $DataRows['dtoflec'];
+                    $q_name = "SElECT * FROM users WHERE id=$t_id";
+                    $e_name = mysqli_query($db, $q_name);
+                    $r = mysqli_fetch_array($e_name);
+                    $f_name = $r['fname'];
+                    //$f_name.=$r['lname'];
+                    $sec = $DataRows['section'];
+                    $sub = $DataRows['subject'];
+
+                    ?>
                     <tr>
-                        <th>S No.</th>
-                        <th>Date</th>
-                        <th>Faculty Name</th>
-                        <th>Section</th>
-                        <th>Subject</th>
-
+                        <td scope="row"><?php echo $i; ?></td>
+                        <td><?php echo $Date; ?></td>
+                        <td><?php echo $date_of_lecture; ?></td>
+                        <td><?php echo $f_name; ?></td>
+                        <td><?php echo $sec; ?></td>
+                        <td><?php echo $sub; ?></td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $i=1;
-                    while ($DataRows = mysqli_fetch_array($e)) {
-                        $Date = $DataRows['dt'];
-                        $t_id = $DataRows['marked_by'];
-                        $q_name="SElECT * FROM users WHERE id=$t_id";
-                        $e_name=mysqli_query($db,$q_name);
-                        $r=mysqli_fetch_array($e_name);
-                        $f_name=$r['fname'];
-                        //$f_name.=$r['lname'];
-                        $sec=$DataRows['section'];
-                        $sub=$DataRows['subject'];
+                    <?php $i++;
+                } ?>
 
-                        ?>
-                        <tr>
-                            <td scope="row"><?php echo $i; ?></td>
-                            <td><?php echo $Date; ?></td>
-                            <td><?php echo $f_name; ?></td>
-                            <td><?php echo $sec; ?></td>
-                            <td><?php echo $sub; ?></td>
-                        </tr>
-                    <?php $i++;} ?>
-
-                    </tbody>
-                </table>
-
-            </div><!-- table-responsive -->
-
+                </tbody>
+            </table>
         </div>
-
         <!-- your content goes here -->
     </div><!-- az-content-body -->
 
@@ -113,6 +114,11 @@ $e=mysqli_query($db,$q);
 <script src="../lib/jquery/jquery.min.js"></script>
 <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../lib/ionicons/ionicons.js"></script>
+<script src="../lib/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../lib/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
+<script src="../lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+<script src="../lib/select2/js/select2.min.js"></script>
 
 <script src="../js/azia.js"></script>
 <script>
@@ -162,6 +168,23 @@ $e=mysqli_query($db,$q);
             $('body').toggleClass('az-iconbar-show');
         });
 
+        $('#datatable1').DataTable({
+            responsive: true,
+            language: {
+                searchPlaceholder: 'Search...',
+                sSearch: '',
+                lengthMenu: '_MENU_ items/page',
+            }
+        });
+
+        $('#datatable2').DataTable({
+            bLengthChange: false,
+            searching: false,
+            responsive: true
+        });
+
+        // Select2
+        $('.dataTables_length select').select2({minimumResultsForSearch: Infinity});
 
     });
 
