@@ -66,24 +66,24 @@ include("../include/session.php");
 
             <div class="form-group">
               <label class="az-content-label tx-11 tx-medium tx-gray-600">First Name </label>
-              <input type="text" class="form-control" form="user_data" name="fname" required>
+              <input type="text" class="form-control" form="user_data" name="fname" required="required">
             </div><!-- form-group -->
             <div class="form-group">
               <label class="az-content-label tx-11 tx-medium tx-gray-600">Last Name </label>
-              <input type="text" class="form-control" form="user_data" name="lname" required>
+              <input type="text" class="form-control" form="user_data" name="lname" required="required">
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="az-content-label tx-11 tx-medium tx-gray-600">Email</label>
 
-              <input type="text" class="form-control pd-r-80" form="user_data" name="email" required>
+              <input type="email" class="form-control pd-r-80" form="user_data" name="email" required="required">
 
             </div><!-- form-group -->
 
             <div class="form-group">
               <label class="az-content-label tx-11 tx-medium tx-gray-600">Password</label>
 
-              <input type="text" class="form-control pd-r-80" form="user_data" name="password" required>
+              <input type="password" class="form-control pd-r-80" form="user_data" name="password" required="required">
 
             </div><!-- form-group -->
 
@@ -94,9 +94,8 @@ include("../include/session.php");
                   <div class="row row-sm">
                     <div class="col-sm-7">
                       <select class="form-control select2-no-search" form="user_data" name="acc_type">
-                        <option selected value="-1">Select</option>
-                        <option value="1">Teacher</option>
-                        <option value="0">Admin</option>
+                        <option selected value="0">Teacher</option>
+                        <option value="2">Admin</option>
                       </select>
                     </div><!-- col -->
                   </div><!-- row -->

@@ -1,40 +1,7 @@
 <?php include('../include/session.php');
+$q="SELECT * FROM logs ORDER BY id desc";
+$e=mysqli_query($db,$q);
 
-$stream = mysqli_real_escape_string($db, $_POST['stream']);
-$section = mysqli_real_escape_string($db, $_POST['section']);
-$half = $_POST['half'];
-$type = mysqli_real_escape_string($db, $_POST['type']);
-$subject = mysqli_real_escape_string($db, $_POST['subject']);
-if (empty($stream)){
-    $_SESSION['ErrorMessage']="Stream cannot be empty";
-    header("LOCATION: ../teacher/attendance_details.php");
-    exit;
-}
-elseif (empty($section)){
-    $_SESSION['ErrorMessage']="Section cannot be empty";
-    header("LOCATION: ../teacher/attendance_details.php");
-    exit;
-}
-elseif (empty($subject)){
-    $_SESSION['ErrorMessage']="Subject cannot be empty";
-    header("LOCATION: ../teacher/attendance_details.php");
-    exit;
-}
-else {
-    $q_count = "SELECT * FROM students WHERE stream='$stream' AND section='$section'";
-    $e_count = mysqli_query($db, $q_count);
-    $num = mysqli_num_rows($e_count);
-    if (($type == 2) && ($half == 1)) {
-        $num = floor($num / 2);
-        $q = "SELECT  * FROM students WHERE stream='$stream' AND section='$section' ORDER BY enrollment asc LIMIT 0,$num";
-    } elseif (($type == 2) && ($half == 2)) {
-        $num = ceil($num / 2);
-        $q = "SELECT * FROM students WHERE stream='$stream' AND section='$section' ORDER BY enrollment desc LIMIT 0,$num";
-    } else {
-        $q = "SELECT * FROM students WHERE stream='$stream' AND section='$section' ORDER BY enrollment asc";
-    }
-    $e = mysqli_query($db, $q);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,95 +53,54 @@ else {
 <div class="az-content az-content-dashboard-six">
     <?php include('../common_components/header.php'); ?>
 
-    <form method="post" action="add_attendance.php" id="form1" onsubmit="return confirmation();"></form>
-
-    <input type="text" form="form1" value="<?php echo $stream; ?>" name="stream" hidden>
-    <input type="text" form="form1" value="<?php echo $section; ?>" name="section" hidden>
-    <input type="text" form="form1" value="<?php echo $type; ?>" name="type" hidden>
-    <input type="text" form="form1" value="<?php echo $subject; ?>" name="subject" hidden>
-
-
     <div class="az-content-body az-content-body-dashboard-six">
         <!--  <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
          <p class="mg-b-20 mg-lg-b-30">Your finance performance and monitoring dashboard template.</p> -->
-        <p class="center-a"><strong>ATTENDANCE SHEET</strong></p>
-        <div class=" card card-body pd-10 mg-20 bg-gray-200 bd ">
-
-            <p class="pdl-10  form-text-size"><strong>Faculty: </strong> <?php echo ucfirst($fname); ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Subject: </strong><?php echo $subject; ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Section: </strong><?php echo $section; ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Date: </strong> <?php echo date('d-m-y'); ?></p>
-            <p class="pdl-10 form-text-size"><strong>Type: </strong> <?php if ($type == 1) {
-                    echo "Theory";
-                } else {
-                    echo "Practical";
-                } ?></p>
-        </div>
-        <div class="col">
-            <input type="checkbox" onclick="toggle(this)"/>Mark All Present
-        </div>
+        <p class="center-a"><strong>ATTENDANCE LOGS</strong></p>
         &nbsp;
         <div class="col">
             <div class="table-responsive  table-m card card-body bg-white-1">
                 <table class="table table-hover table-bordered mg-b-0  ">
                     <thead>
                     <tr>
-                        <th> Enrollment No.</th>
-                        <th>Name</th>
+                        <th>S No.</th>
+                        <th>Date</th>
+                        <th>Faculty Name</th>
+                        <th>Section</th>
+                        <th>Subject</th>
 
-                        <th>Present</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
+                    $i=1;
                     while ($DataRows = mysqli_fetch_array($e)) {
-                        $id = $DataRows['id'];
-                        $name = $DataRows['name'];
-                        $enr = $DataRows['enrollment'];
+                        $Date = $DataRows['dt'];
+                        $t_id = $DataRows['marked_by'];
+                        $q_name="SElECT * FROM users WHERE id=$t_id";
+                        $e_name=mysqli_query($db,$q_name);
+                        $r=mysqli_fetch_array($e_name);
+                        $f_name=$r['fname'];
+                        //$f_name.=$r['lname'];
+                        $sec=$DataRows['section'];
+                        $sub=$DataRows['subject'];
 
                         ?>
                         <tr>
-                            <td scope="row"><?php echo $enr; ?></td>
-                            <td><?php echo $name; ?></td>
-
-                            <td>
-                                <label class="ckbox">
-                                    <input class="check" form="form1" name="student[<?php echo $enr; ?>]" value='1'
-                                           type="checkbox"><span></span>
-                                </label>
-
-
-                            </td>
+                            <td scope="row"><?php echo $i; ?></td>
+                            <td><?php echo $Date; ?></td>
+                            <td><?php echo $f_name; ?></td>
+                            <td><?php echo $sec; ?></td>
+                            <td><?php echo $sub; ?></td>
                         </tr>
-                    <?php } ?>
+                    <?php $i++;} ?>
 
                     </tbody>
                 </table>
 
             </div><!-- table-responsive -->
-            <button class="btn btn-indigo btn-rounded button-a" name="submit" form="form1">Submit</button>
+
         </div>
-        <script>
-            function toggle(source) {
-                checkboxes = document.getElementsByClassName('check');
-                for (var i = 0, n = checkboxes.length; i < n; i++) {
-                    checkboxes[i].checked = source.checked;
-                }
-            }
-            function confirmation() {
-            var inputElems=document.getElementsByClassName('check'),
-                count=0;
-            for (var i=0;i<inputElems.length;i++){
-                if (inputElems[i].type==="checkbox"&&inputElems[i].checked===true){
-                    count++;
-                }
-            }
-            var choice=confirm("Want to Submit?  Total Students Present: "+count);
-            if (choice){return true;}
-            else{window.href="dashboard.php";
-                return false;}
-            }
-        </script>
 
         <!-- your content goes here -->
     </div><!-- az-content-body -->

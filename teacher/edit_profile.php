@@ -80,7 +80,6 @@ include('../include/session.php');
                 </div><!-- row -->
               </div>
             </section>
-            <h3>Contact Details</h3>
             <section>
               <div>
                 <div class="row row-xs align-items-center mg-b-10">
@@ -97,7 +96,7 @@ include('../include/session.php');
             <section>
               <div>
                 <div class="row row-xs  align-items-center mg-b-10">
-                  <div class="col-md">
+                  <div class="col-md-5">
                     <label class="form-label mg-b-0">Subjects: (Hold CTRL and Select)</label>
                    
                      
@@ -161,24 +160,7 @@ include('../include/session.php');
 
 
     <script src="../js/azia.js"></script>
-    <script>
-      $(function(){
-        'use strict'
-        $('#wizard1').steps({
-          headerTag: 'h3',
-          bodyTag: 'section',
-          autoFocus: true,
-          titleTemplate: '<span class="number">#index#</span> <span class="title">#title#</span>'
-        });
-        $('.select2-no-search').select2({
-            minimumResultsForSearch: Infinity,
-            placeholder: 'Choose one'
-          });
-        });
-
-     
-      
-    </script>
+    
 
   </body>
 </html>

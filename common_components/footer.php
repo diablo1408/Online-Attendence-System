@@ -1,9 +1,8 @@
  
  <div class="az-footer">
         <div class="container-fluid">
-          <span>&copy; 2018 Azia Responsive Bootstrap 4 Dashboard Template</span>
-          <span>Designed by: ThemePixels</span>
+          <span>&copy; <?php echo date('Y'); ?> Attendance Dashboard</span>
+          <span>Devised by: Four CSE Students</span>
         </div><!-- container -->
         </div><!-- az-footer --> 
     
- 

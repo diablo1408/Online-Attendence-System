@@ -61,10 +61,12 @@
                 <!-- <hr class="mg-y-30 mg-lg-y-50"> -->
       
                   <div class="az-content-label  pd-10 mg-5" style="font-size:large;" align="center">
-                   Attendance Details
+                   Attendance Details<br>
+                      &nbsp;
+                      <?php echo Message(); echo AlertMessage();?>
                   </div>
                 
-                <form id="form1" method="post" action="attendence_form.php"></form>
+                <form id="form1" method="post" action="attendance_form.php"></form>
                 <div class="pd-30 pd-sm-20 bg-gray-200 bd-2  ">
                   <div class="row row-xs align-items-center mg-b-20">
                     <div class="col-md-4">
@@ -102,7 +104,7 @@
                       <label class="form-label mg-b-0 font-weight-bold"  style="font-size:medium;">Section</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <select name="section" form="form1" class="form-control">
+                      <select name="section" form="form1" class="form-control" required>
                         <option value="0" selected>Select</option>
                         <?php 
                         $q="SELECT sections FROM users WHERE id='$teacher_id'";
@@ -122,7 +124,7 @@
                       <label class="form-label mg-b-0 font-weight-bold"  style="font-size:medium;">Type</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <select name="type" form="form1" class="form-control">
+                      <select name="type" form="form1" class="form-control" required>
                         <option value="0" selected>Select</option>
                         <option value="1">Theory</option>
                         <option value="2">Practical</option>
@@ -148,7 +150,7 @@
                       <label class="form-label mg-b-0 font-weight-bold"  style="font-size:medium;">Subject</label>
                     </div><!-- col -->
                     <div class="col-md-8 mg-t-5 mg-md-t-0">
-                      <select name="subject" form="form1" class="form-control">
+                      <select name="subject" form="form1" class="form-control" required>
                         <option value="0" selected>Select</option>
                         <?php 
                         $q="SELECT subjects FROM users WHERE id='$teacher_id'";

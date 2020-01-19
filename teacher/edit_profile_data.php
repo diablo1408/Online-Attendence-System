@@ -9,10 +9,12 @@ $id=$teacher_id;
 $q="UPDATE users SET fname='$f_name',lname='$l_name',email='$e_mail',subjects='$subjects',sections='$sections' WHERE id=$id";
 $e=mysqli_query($db,$q);
 if ($e) {
+    $_SESSION['SuccessMessage']="Profile Updated!!";
 header("Location: dashboard.php");
 }
 else{
-echo("Error description: " . $db -> error);
+    $_SESSION['ErrorMessage']="Failed to Perform";
+    header("Location: dashboard.php");
 }
 
 ?>

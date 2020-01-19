@@ -17,7 +17,12 @@ if (isset($_POST['submit'])) {
             VALUES ('$enr', '$stu_name', '$year', '$stream', '$section')";
             $insert = mysqli_multi_query($db, $sql);
             if ($insert) {
-            	header("Location: dashboard_admin.php");
+                $_SESSION['SuccessMessage']="Attendence Added!!";
+            	header("Location: ../teacher/dashboard.php");
+            }
+            else{
+                $_SESSION['ErrorMessage']="Failed to Perform";
+                header("Location: ../teacher/dashboard.php");
             }
     }
 

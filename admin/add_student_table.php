@@ -4,7 +4,26 @@ $number = $_POST['number'];
 $stream = mysqli_real_escape_string($db, $_POST['stream']);
 $year = mysqli_real_escape_string($db, $_POST['year']);
 $section = mysqli_real_escape_string($db, $_POST['section']);
-
+if (empty($number)){
+    $_SESSION['ErrorMessage']="Total student count needed!!";
+    header("LOCATION: ../admin/add_student.php");
+    exit;
+}
+if (empty($stream)){
+    $_SESSION['ErrorMessage']="Stream needed!!";
+    header("LOCATION: ../admin/add_student.php");
+    exit;
+}
+if (empty($year)){
+    $_SESSION['ErrorMessage']="Year needed!!";
+    header("LOCATION: ../admin/add_student.php");
+    exit;
+}
+if (empty($section)){
+    $_SESSION['ErrorMessage']="Section needed!!";
+    header("LOCATION: ../admin/add_student.php");
+    exit;
+}
 
 ?>
 <!DOCTYPE html>

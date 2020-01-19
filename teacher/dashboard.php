@@ -1,7 +1,7 @@
 <?php include('../include/session.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,89 +40,71 @@
     <link rel="stylesheet" href="..\css\azia.css">
     <link rel="stylesheet" href="../css/customcss.css">
 
-  </head>
-  <body class="az-body az-light">
+</head>
+<body class="az-body az-light">
 
-     <?php include('../common_components/side_nav_bar.php');?>
-     
- 
-    
-     <div class="az-content az-content-dashboard-six">
-     <?php include('../common_components/header.php');?>
-     
-    
+<?php include('../common_components/side_nav_bar.php'); ?>
 
-      <div class="az-content-body az-content-body-dashboard-six">
-      <div class="  card bd-0">
-                  <div class="card-header bg-white-400 bd-b-0-f pd-b-0">
-                    <nav class="nav nav-tabs">
-                      <a class="nav-link active" data-toggle="tab" href="#tabCont1">Active Classes</a>
-                      <a class="nav-link" data-toggle="tab" href="#tabCont2">Previous Classes</a>
-                     
-                  </div>
-           
-       
-        <div class="bd bd-t-0 tab-content">
-           <div id="tabCont1" class="tab-pane active show">
-               <div class="row row-sm">
-                   <div class="col-md">
-                   <div class="card bg-gray-200 bd-0">
-                      <div class="card-body">
-                       <h5 class="card-title tx-dark tx-medium mg-b-10">The Card Title</h5>
-                       <p class="card-subtitle mg-b-15">This is the card subtitle</p>
-                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                       <a href="#" class="card-link">Card link</a>
-                       <a href="#" class="card-link">Another link</a>
-                       <button data-toggle="dropdown" class="btn btn-indigo "> <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
-                       <div class="dropdown-menu">
-                         <a href="" class="dropdown-item">Add Attendence(Theory)</a>
-                         <a href="" class="dropdown-item">Add Attendence(Practical)</a>
-                         
-                        </div><!-- dropdown-menu -->
-                     </div>
-                   </div>
-                 </div>
-                 <div class="col-md">
-                    <div class="card bg-gray-200 bd-0">
-                       <div class="card-body">
-                        <h5 class="card-title tx-dark tx-medium mg-b-10">The Card Title</h5>
-                        <p class="card-subtitle mg-b-15">This is the card subtitle</p>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                        <button data-toggle="dropdown" class="btn btn-indigo "> <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
-                           <div class="dropdown-menu">
-                             <a href="" class="dropdown-item">Profile</a>
-                             <a href="" class="dropdown-item">Activity Logs</a>
-                             <a href="" class="dropdown-item">Account Settings</a>
-                             <a href="" class="dropdown-item">Logout</a>
-                            </div><!-- dropdown-menu -->
-                      </div>
+
+<div class="az-content az-content-dashboard-six">
+    <?php include('../common_components/header.php'); ?>
+
+
+    <div class="az-content-body az-content-body-dashboard-six">
+        <h3 class="col az-content-title tx-24 mg-b-5"><?php echo SuccessMessage(); echo AlertMessage();echo Message();?></h3>
+        <br>
+        <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+            <div class="card card-dashboard-balance">
+                <div class="card-body">
+                    <label class="az-content-label mg-b-0">Attendance Dashboard</label>
+                    <h1 class="balance-amount"><?php echo ucfirst($fname.' '.$lname);?></h1>
+                    <div class="d-sm-flex">
+                        <div>
+                            <label class="az-content-label">Section Currently Teaching</label>
+                            <h5 class="account-name"><?php echo $teacherssections ?></h5>
+                        </div>
+                        <div class="mg-t-20 mg-sm-t-0 mg-sm-l-50">
+                            <label class="az-content-label">Subjects Current Teaching</label>
+                            <h5 class="account-name"><?php echo $teacherssubjects ?></h5>
+                        </div>
                     </div>
-                  </div>
-               
-              </div>
-            
-            
-          </div><!-- tab-pane -->
-          <div id="tabCont2" class="tab-pane">This is tab content 2...</div>
-          
+                </div><!-- card-body -->
+            </div><!-- card -->
         </div>
+        &nbsp;
+        <h1 class="col az-content-title tx-24 mg-b-5">Quick Actions</h1>
+        &nbsp;
+        <div class="col">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="./attendance_details.php"> <div class="card card-dashboard-ten bg-purple">
+                            <h4 class="az-content-label">Teacher</h4>
+                            <div class="card-body">
+                                <div>
+                                    <h6>Mark Attendance</h6>
+                                </div>
+                            </div><!-- card-body -->
+                        </div></a>
 
-        <!-- your content goes here -->
-      </div><!-- az-content-body -->
+                </div>
+                <div class="col-lg-6">
+                    <a href="../admin/view_report_admin.php">
+                        <div class="card card-dashboard-ten bg-primary">
+                            <h4 class="az-content-label">Reports & Statistics</h4>
+                            <div class="card-body">
+                                <div>
+                                    <h6>View Report</h6>
+                                </div>
+                            </div><!-- card-body -->
+                        </div>
+                    </a>
 
-     
-    
-     </div><!-- az-content -->
-      <?php include('../common_components/footer.php');?>
-     
- 
-     
+                </div>
+            </div>
+        </div>
+    </div><!-- az-content -->
+    <?php include('../common_components/footer.php'); ?>
 
-     
-
-    
 
     <script src="../lib/jquery/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -130,55 +112,54 @@
 
     <script src="../js/azia.js"></script>
     <script>
-      $(function(){
-        'use strict'
+        $(function () {
+            'use strict'
 
-        if($('.az-iconbar .nav-link.active').length) {
-          var targ = $('.az-iconbar .nav-link.active').attr('href');
-          $(targ).addClass('show');
+            if ($('.az-iconbar .nav-link.active').length) {
+                var targ = $('.az-iconbar .nav-link.active').attr('href');
+                $(targ).addClass('show');
 
-          if(window.matchMedia('(min-width: 1200px)').matches) {
-            $('.az-iconbar-aside').addClass('show');
-          }
+                if (window.matchMedia('(min-width: 1200px)').matches) {
+                    $('.az-iconbar-aside').addClass('show');
+                }
 
-          if(window.matchMedia('(min-width: 992px)').matches &&
-            window.matchMedia('(max-width: 1199px)').matches) {
-              $('.az-iconbar .nav-link.active').removeClass('active');
-          }
-        }
+                if (window.matchMedia('(min-width: 992px)').matches &&
+                    window.matchMedia('(max-width: 1199px)').matches) {
+                    $('.az-iconbar .nav-link.active').removeClass('active');
+                }
+            }
 
-        $('.az-iconbar .nav-link').on('click', function(e){
-          e.preventDefault();
+            $('.az-iconbar .nav-link').on('click', function (e) {
+                e.preventDefault();
 
-          $(this).addClass('active');
-          $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
 
-          $('.az-iconbar-aside').addClass('show');
+                $('.az-iconbar-aside').addClass('show');
 
-          var targ = $(this).attr('href');
-          $(targ).addClass('show');
-          $(targ).siblings().removeClass('show');
+                var targ = $(this).attr('href');
+                $(targ).addClass('show');
+                $(targ).siblings().removeClass('show');
+            });
+
+            $('.az-iconbar-toggle-menu').on('click', function (e) {
+                e.preventDefault();
+
+                if (window.matchMedia('(min-width: 992px)').matches) {
+                    $('.az-iconbar .nav-link.active').removeClass('active');
+                    $('.az-iconbar-aside').removeClass('show');
+                } else {
+                    $('body').removeClass('az-iconbar-show');
+                }
+            })
+
+            $('#azIconbarShow').on('click', function (e) {
+                e.preventDefault();
+                $('body').toggleClass('az-iconbar-show');
+            });
+
+
         });
-
-        $('.az-iconbar-toggle-menu').on('click', function(e){
-          e.preventDefault();
-
-          if(window.matchMedia('(min-width: 992px)').matches) {
-            $('.az-iconbar .nav-link.active').removeClass('active');
-            $('.az-iconbar-aside').removeClass('show');
-          } else {
-            $('body').removeClass('az-iconbar-show');
-          }
-        })
-
-        $('#azIconbarShow').on('click', function(e){
-          e.preventDefault();
-          $('body').toggleClass('az-iconbar-show');
-        });
-
-
-
-      });
     </script>
-  </body>
+</body>
 </html>

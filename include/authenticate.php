@@ -5,7 +5,8 @@
     {
         $email=mysqli_real_escape_string($db,$_POST['email']);
         $password=mysqli_real_escape_string($db,$_POST['password']);
-        $sql= "SELECT * FROM users WHERE email='$email' and password='$password'";
+        $pass_hash=md5($password);
+        $sql= "SELECT * FROM users WHERE email='$email' and password='$pass_hash'";
         $result=mysqli_query($db,$sql);
         $count=mysqli_num_rows($result);
 

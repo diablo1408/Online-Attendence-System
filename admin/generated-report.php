@@ -1,4 +1,3 @@
-<?php include "../include/session.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,74 +46,63 @@
 <body class="az-body az-light">
 <?php include('../common_components/side_nav_bar.php');?>
 <div class="az-content az-content-dashboard-six">
-    <?php include('../common_components/header.php');?>
+    <div class="az-header az-header-dashboard-six">
+        <div class="container-fluid">
+            <div class="az-header-left">
+                <a href="" id="azIconbarShow" class="az-header-menu-icon"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-center">
+                <input type="search" class="form-control" placeholder="Search for anything...">
+                <button class="btn"><i class="fas fa-search"></i></button>
+            </div><!-- az-header-center -->
+            <div class="az-header-right">
+                <!--  <div class="az-header-message">
+                   <a href="app-chat.html"><i class="typcn typcn-messages"></i></a>
+                 </div><-- az-header-message -->
+
+                <div class="dropdown az-profile-menu">
+                    <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
+                    <div class="dropdown-menu">
+                        <div class="az-dropdown-header d-sm-none">
+                            <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                        </div>
+                        <div class="az-header-profile">
+                            <div class="az-img-user">
+                                <img src="https://via.placeholder.com/500x500" alt="">
+                            </div><!-- az-img-user -->
+                            <h6>Aziana Pechon</h6>
+                            <span>Premium Member</span>
+                        </div><!-- az-header-profile -->
+
+                        <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
+                        <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
+                        <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign
+                            Out</a>
+                    </div><!-- dropdown-menu -->
+                </div>
+            </div><!-- az-header-right -->
+        </div><!-- container -->
+    </div><!-- az-header -->
 
     <div class="az-content-body az-content-body-dashboard-six">
         <p class="mg-b-20 mg-lg-b-30"></p>
-        <div class="az-content-body">
-            <h2 class="az-content-title">Result</h2>
-            <?php echo Message(); echo AlertMessage();?>
-            <div class="az-content-label mg-b-10">Attendence Data</div>
-            <div>
-                <form id="report" method="post" action="attendence_result.php"></form>
-                <div class="row row-xs align-items-center mg-b-10">
-                    <div class="col-md-1">
-                        <label class="form-label mg-b-0">Rollno:</label>
-                    </div><!-- col -->
-                    <div class="col-md-4 mg-t-5 mg-md-t-0">
-                        <input type="number" class="form-control" form="report" name="rollno" placeholder="Enter RollNo">
-                    </div><!-- col -->
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-10">
-                    <div class="col-md-1">
-                        <label class="form-label mg-b-0">Stream:</label>
-                    </div><!-- col -->
-                    <div class="col-md-4 mg-t-5 mg-md-t-0">
-                        <input type="text" class="form-control" form="report" name="stream" placeholder="Enter Stream" disabled="disabled">
-                    </div><!-- col -->
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-10">
-                    <div class="col-md-1">
-                        <label class="form-label mg-b-0">Section:</label>
-                    </div><!-- col -->
-                    <div class="col-md-4 mg-t-5 mg-md-t-0">
-                        <input type="text" class="form-control" form="report" name="section" placeholder="Enter Section" disabled="disabled">
-                    </div><!-- col -->
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-10">
-                    <div class="col-md-1">
-                        <label class="form-label mg-b-0">Subject:</label>
-                    </div><!-- col -->
-                    <div class="col-md-4 mg-t-5 mg-md-t-0 ">
-                        <input type="text" class="form-control" form="report" name="subject" placeholder="Enter Subject" disabled="disabled">
-                    </div><!-- col -->
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-10">
-                    <div class="col-md-1">
-                        <label class="form-label mg-b-0">From:</label>
-                    </div><!-- col -->
-                    <div class="col-md-4 mg-t-5 mg-md-t-0">
-                        <input type="date" class="form-control" name="initialdate" form="report" placeholder="YYYY-MM-DD" disabled="disabled">
-                    </div><!-- col -->
-                    <div class="col-md-1">
-                        <label class="form-label mg-b-0 mg-l-20">To:</label>
-                    </div><!-- col -->
-                    <div class="col-md-4 mg-t-5 mg-md-t-0">
-                        <input type="date" class="form-control" name="finaldate" form="report" placeholder="Enter final Date" disabled="disabled">
-                    </div>
-                </div><!-- row -->
-                <div class="row row-xs align-items-center mg-b-20">
-                    <!-- col -->
-                </div><!-- row -->
-                    <button class="btn btn-az-primary pd-x-30 mg-r-5 mg-b-50" type="submit" form="report" name="submit">Load Data</button>
-            </div>
+        <div class=" card card-body pd-10 mg-20 bg-gray-200 bd ">
 
-            <hr class="mg-y-30 mg-lg-y-50">
+            <p class="pdl-10  form-text-size"><strong>Enrollment Number: </strong> <?php echo ucfirst($fname); ?> </p>
+            <p class="pdl-10 form-text-size"><strong>Student Name: </strong><?php echo $subject; ?> </p>
+            <p class="pdl-10 form-text-size"><strong>Section: </strong><?php echo $section; ?> </p>
+            <p class="pdl-10 form-text-size"><strong>Date: </strong> <?php echo date('d-m-y'); ?></p>
         </div>
     </div>
-    <?php include '../common_components/footer.php'; ?>
 </div>
-
+<div class="az-footer">
+    <div class="container">
+        <span>&copy;  ADGITM </span>
+        <span>Designed by: Dibwab</span>
+    </div><!-- container -->
+</div><!-- az-footer -->
 
 
 <script src="../lib/jquery/jquery.min.js"></script>

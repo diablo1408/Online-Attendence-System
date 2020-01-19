@@ -57,7 +57,7 @@ include("../include/session.php");
       <p class="mg-b-20 mg-lg-b-30"></p>
       <div class="az-content ">
         <h2 align="center" class="az-content-title">Student Registration</h2>
-
+        <?php echo Message(); echo AlertMessage();?>
         <div class="az-content-label mg-b-10">Enter Student Data</div>
 
         <form action="add_student_table.php" method="post" id="form_student"></form>
@@ -100,7 +100,7 @@ include("../include/session.php");
               <label class="form-label mg-b-0 font-weight-bold" style="font-size:medium">Total Students:</label>
             </div><!-- col -->
             <div class=" mg-t-5 mg-md-t-0">
-              <input form="form_student" type="text" class="form-control" placeholder="Enter Total Students" name="number">
+              <input form="form_student" type="text" class="form-control" placeholder="Enter Total Students" name="number" required="required">
             </div><!-- col -->
             <div class="col-md-2">
               <label class="form-label mg-b-0 font-weight-bold" style="font-size: medium;">Section:</label>

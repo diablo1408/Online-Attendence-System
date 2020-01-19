@@ -30,11 +30,16 @@ if (isset($_POST['submit'])) {
   }
    if ($i=1) {
     	$f_name=ucfirst($fname);
-    	$q="INSERT INTO logs (dt,section,subject,marked_by,type) VALUES ('$curdt','$section','$subject',$teacher_id,$type)";
+    	$q="INSERT INTO logs (dt,section,subject,marked_by,type) VALUES ('$curdt','$section','$subject',$teacher_id,'$type')";
     	$exe=mysqli_query($db,$q);
     	if ($exe) {
+    		$_SESSION['SuccessMessage']="Attendence Added!!";
     	header('Location: dashboard.php');
     	}
+		else{
+			$_SESSION['ErrorMessage']="Failed to Perform";
+			header("Location: dashboard.php");
+		}
     }
 }
 

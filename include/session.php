@@ -6,11 +6,13 @@
     $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
     
     $teacher_id = $row['id'];
-    $user_status=$row['role'];
     $fname=$row['fname'];
     $lname=$row['lname'];
     $email=$row['email'];
+    $teacherssubjects=$row['subjects'];
+    $teacherssections=$row['sections'];
     $password=$row['password'];
+    $flag=$row['flag'];
     
     if(!isset($_SESSION['login_user'])){
        header("location: ../index.php");
@@ -48,6 +50,7 @@
 
         }
     }
-
+    if ($flag=="0"){
+ $_SESSION['AlertMessage']="Activate Your Account! Contact Admin";}
 
  ?>
