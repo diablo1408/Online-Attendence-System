@@ -38,6 +38,8 @@ include("../include/session.php");
   <link href="../lib/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="../lib/typicons.font/typicons.css" rel="stylesheet">
+  <link href="../lib/line-awesome/css/line-awesome.css" rel="stylesheet">
+
 
   <!-- azia CSS -->
   <link rel="stylesheet" href="../css/azia.css">
