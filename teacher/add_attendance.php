@@ -9,7 +9,10 @@ if (isset($_POST['submit'])) {
 	$curdt=date('y-m-d');
 	$i=0;
 
-
+if (isset($_POST['cancel'])){
+	header("Location: dashboard.php");
+	exit;
+}
 	
 	if ($type=="1") {
 		$type="t";

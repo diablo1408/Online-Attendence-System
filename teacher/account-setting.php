@@ -53,12 +53,13 @@ include('../include/session.php');
 
 <div class="az-content az-content-dashboard-six">
     <?php include('../common_components/header.php'); ?>
-    <form action="dasdsadasd" method="post" id="profile"></form>
+    <form action="change_account.php" method="post" id="profile"></form>
 
     <div class="az-content-body az-content-body-dashboard-six">
         <p class="mg-b-20 mg-lg-b-30"></p>
         <div class="az-content-body">
             <h2 class="az-content-title col">Change Password</h2>
+            <h4><?php echo Message();?></h4>
             <div id="wizard1">
                 <section>
                     <div>
@@ -68,7 +69,7 @@ include('../include/session.php');
                                     <label class="form-control-label">Old Password</label>
                                 </div><!-- col -->
                                 <div class="col-md-12 mg-t-5 mg-md-t-0">
-                                    <input id="firstname" class="form-control" form="profile" name="fname"
+                                    <input class="form-control" form="profile" name="old"
                                            placeholder="Enter Old Password"
                                            type="password">
                                 </div>
@@ -80,7 +81,7 @@ include('../include/session.php');
                                     <label class="form-control-label">New Password</label>
                                 </div><!-- col -->
                                 <div class="col-md-12 mg-t-5 mg-md-t-0">
-                                    <input id="firstname" class="form-control" form="profile" name="fname"
+                                    <input class="form-control" form="profile" name="new"
                                             placeholder="Enter New Password"
                                            type="password">
                                 </div>

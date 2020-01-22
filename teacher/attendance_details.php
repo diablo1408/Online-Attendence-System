@@ -126,7 +126,7 @@
                     <label class="form-label mg-b-0 font-weight-bold" style="font-size:medium;">Type</label>
                 </div><!-- col -->
                 <div class="col-md-8 mg-t-5 mg-md-t-0">
-                    <select name="type" form="form1" class="form-control" required>
+                    <select name="type" form="form1" class="form-control type-selector" id="type-selector" required onchange="myFunction()">
                         <option value="0" selected>Select</option>
                         <option value="1">Theory</option>
                         <option value="2">Practical</option>
@@ -140,8 +140,8 @@
                         Practical</label>
                 </div><!-- col -->
                 <div class="col-md-8 mg-t-5 mg-md-t-0">
-                    <select name="half" form="form1" class="form-control">
-                        <option selected>If Practical Choosen</option>
+                    <select name="half" form="form1" class="form-control" id="practical-section" disabled="true">
+                        <option value="0" selected>If Practical Choosen</option>
                         <option value="1">A</option>
                         <option value="2">B</option>
                     </select>
@@ -181,7 +181,7 @@
                         <input type="date" name="dateoflecture" form="form1" class="form-control" required="required" placeholder="DD/MM/YYYY"
                                min="<?php
                                $date=date_create(date('Y-m-d'));
-                               date_sub($date,date_interval_create_from_date_string("1 day"));
+                               date_sub($date,date_interval_create_from_date_string("3 day"));
                                echo date_format($date,"Y-m-d");
                                ?>" max="<?php echo date('Y-m-d'); ?>" value="<?php echo date('Y-m-d'); ?>">
 
@@ -264,6 +264,7 @@
 
     });
 </script>
+<script src="../js/attendacne_details.js"></script>
 </body>
 
 </html>
