@@ -38,6 +38,10 @@
                 <?php }?>
                 <h6 class="az-iconbar-title">Report</h6>
                 <a href="../admin/view_report_admin.php" class="nav-link">Generate Report</a>
+                <?php if ($flag=="1"){?>
+                <h6 class="az-iconbar-title">Teacher Logs</h6>
+                <a href="../teacher/teacher-logs.php" class="nav-link">My Logs</a>
+                <?php }?>
                 <?php if ($flag=="2"){?>
                 <h6 class="az-iconbar-title">Account</h6>
                 <a href="../admin/active_account.php" class="nav-link">Activate User</a>

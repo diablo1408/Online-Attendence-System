@@ -1,26 +1,26 @@
 <?php include('../include/session.php');
-
+$half = 0;
 $stream = mysqli_real_escape_string($db, $_POST['stream']);
 $section = mysqli_real_escape_string($db, $_POST['section']);
-$half = $_POST['half'];
+if (isset($_POST['half'])) {
+    $half = $_POST['half'];
+}
 $type = mysqli_real_escape_string($db, $_POST['type']);
 $subject = mysqli_real_escape_string($db, $_POST['subject']);
-if (empty($stream)){
-    $_SESSION['ErrorMessage']="Stream cannot be empty";
+$date_of_lecture = mysqli_real_escape_string($db, $_POST['dateoflecture']);
+if (empty($stream)) {
+    $_SESSION['ErrorMessage'] = "Stream cannot be empty";
     header("LOCATION: ../teacher/attendance_details.php");
     exit;
-}
-elseif (empty($section)){
-    $_SESSION['ErrorMessage']="Section cannot be empty";
+} elseif (empty($section)) {
+    $_SESSION['ErrorMessage'] = "Section cannot be empty";
     header("LOCATION: ../teacher/attendance_details.php");
     exit;
-}
-elseif (empty($subject)){
-    $_SESSION['ErrorMessage']="Subject cannot be empty";
+} elseif (empty($subject)) {
+    $_SESSION['ErrorMessage'] = "Subject cannot be empty";
     header("LOCATION: ../teacher/attendance_details.php");
     exit;
-}
-else {
+} else {
     $q_count = "SELECT * FROM students WHERE stream='$stream' AND section='$section'";
     $e_count = mysqli_query($db, $q_count);
     $num = mysqli_num_rows($e_count);
@@ -92,6 +92,7 @@ else {
     <input type="text" form="form1" value="<?php echo $section; ?>" name="section" hidden>
     <input type="text" form="form1" value="<?php echo $type; ?>" name="type" hidden>
     <input type="text" form="form1" value="<?php echo $subject; ?>" name="subject" hidden>
+    <input type="date" form="form1" value="<?php echo $date_of_lecture; ?>" name="date_of_lecture_fin" hidden>
 
 
     <div class="az-content-body az-content-body-dashboard-six">
@@ -100,15 +101,18 @@ else {
         <p class="center-a"><strong>ATTENDANCE SHEET</strong></p>
         <div class=" card card-body pd-10 mg-20 bg-gray-200 bd ">
 
-            <p class="pdl-10  form-text-size"><strong>Faculty: </strong> <?php echo ucfirst($fname); ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Subject: </strong><?php echo $subject; ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Section: </strong><?php echo $section; ?> </p>
-            <p class="pdl-10 form-text-size"><strong>Date: </strong> <?php echo date('d-m-y'); ?></p>
-            <p class="pdl-10 form-text-size"><strong>Type: </strong> <?php if ($type == 1) {
+            <span class="pdl-10  form-text-size"><strong>Faculty: </strong> <?php echo ucfirst($fname); ?> </span>
+            <span class="pdl-10 form-text-size"><strong>Subject: </strong><?php echo $subject; ?> </span>
+            <span class="pdl-10 form-text-size"><strong>Section: </strong><?php echo $section; ?> </span>
+            <span class="pdl-10 form-text-size"><strong>Date of Lecture: </strong> <?php
+                $date_formatted = date_create($date_of_lecture);
+                echo date_format($date_formatted, "d-m-Y"); ?></span>
+            <span class="pdl-10 form-text-size"><strong>Date of Marking: </strong> <?php echo date('d-m-Y'); ?></span>
+            <span class="pdl-10 form-text-size"><strong>Type: </strong> <?php if ($type == 1) {
                     echo "Theory";
                 } else {
                     echo "Practical";
-                } ?></p>
+                } ?></span>
         </div>
         <div class="col">
             <input type="checkbox" onclick="toggle(this)"/>Mark All Present
@@ -119,6 +123,7 @@ else {
                 <table class="table table-hover table-bordered mg-b-0  ">
                     <thead>
                     <tr>
+                        <th>S No.</th>
                         <th> Enrollment No.</th>
                         <th>Name</th>
 
@@ -127,6 +132,7 @@ else {
                     </thead>
                     <tbody>
                     <?php
+                    $i = 1;
                     while ($DataRows = mysqli_fetch_array($e)) {
                         $id = $DataRows['id'];
                         $name = $DataRows['name'];
@@ -134,6 +140,7 @@ else {
 
                         ?>
                         <tr>
+                            <td><?php echo $i; ?></td>
                             <td scope="row"><?php echo $enr; ?></td>
                             <td><?php echo $name; ?></td>
 
@@ -146,13 +153,23 @@ else {
 
                             </td>
                         </tr>
-                    <?php } ?>
+                        <?php $i = $i + 1;
+                    } ?>
 
                     </tbody>
                 </table>
 
             </div><!-- table-responsive -->
-            <button class="btn btn-indigo btn-rounded button-a" name="submit" form="form1">Submit</button>
+            <div class="col">
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn btn-indigo btn-rounded button-a" name="submit" form="form1">Submit</button>
+                    </div>
+                    <div class="col-1">
+                        <a href="dashboard.php"><button class="btn btn-secondary btn-rounded button-a">Cancel</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
         <script>
             function toggle(source) {
@@ -161,18 +178,22 @@ else {
                     checkboxes[i].checked = source.checked;
                 }
             }
+
             function confirmation() {
-            var inputElems=document.getElementsByClassName('check'),
-                count=0;
-            for (var i=0;i<inputElems.length;i++){
-                if (inputElems[i].type==="checkbox"&&inputElems[i].checked===true){
-                    count++;
+                var inputElems = document.getElementsByClassName('check'),
+                    count = 0;
+                for (var i = 0; i < inputElems.length; i++) {
+                    if (inputElems[i].type === "checkbox" && inputElems[i].checked === true) {
+                        count++;
+                    }
                 }
-            }
-            var choice=confirm("Want to Submit?  Total Students Present: "+count);
-            if (choice){return true;}
-            else{window.href="dashboard.php";
-                return false;}
+                var choice = confirm("Want to Submit?  Total Students Present: " + count);
+                if (choice) {
+                    return true;
+                } else {
+                    window.href = "dashboard.php";
+                    return false;
+                }
             }
         </script>
 

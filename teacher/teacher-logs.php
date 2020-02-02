@@ -1,5 +1,5 @@
 <?php include('../include/session.php');
-$q = "SELECT * FROM logs ORDER BY id desc";
+$q = "SELECT * FROM logs WHERE marked_by=$teacher_id ORDER BY id desc";
 $e = mysqli_query($db, $q);
 
 ?>
@@ -59,7 +59,7 @@ $e = mysqli_query($db, $q);
     <div class="az-content-body az-content-body-dashboard-six">
         <!--  <h2 class="az-content-title tx-24 mg-b-5">Hi, welcome back!</h2>
          <p class="mg-b-20 mg-lg-b-30">Your finance performance and monitoring dashboard template.</p> -->
-        <p class="center-a"><strong>ATTENDANCE LOGS</strong></p>
+        <p class="center-a"><strong><?php echo strtoupper($fname.'\'s ') ?>ATTENDANCE LOGS</strong></p>
         &nbsp;
         <div class="col">
             <table id="datatable1" class="display responsive nowrap">
@@ -68,7 +68,6 @@ $e = mysqli_query($db, $q);
                     <th class="wd-5p">S No.</th>
                     <th class="wd-15p">Date of Marking</th>
                     <th class="wd-15p">Date of Lecture</th>
-                    <th class="wd-20p">Faculty Name</th>
                     <th class="wd-15p">Section</th>
                     <th class="wd-10p">Subject</th>
                 </tr>
@@ -80,11 +79,6 @@ $e = mysqli_query($db, $q);
                     $Date = $DataRows['dt'];
                     $t_id = $DataRows['marked_by'];
                     $date_of_lecture = $DataRows['dtoflec'];
-                    $q_name = "SElECT * FROM users WHERE id=$t_id";
-                    $e_name = mysqli_query($db, $q_name);
-                    $r = mysqli_fetch_array($e_name);
-                    $f_name = $r['fname'];
-                    //$f_name.=$r['lname'];
                     $sec = $DataRows['section'];
                     $sub = $DataRows['subject'];
 
@@ -93,7 +87,6 @@ $e = mysqli_query($db, $q);
                         <td scope="row"><?php echo $i; ?></td>
                         <td><?php echo $Date; ?></td>
                         <td><?php echo $date_of_lecture; ?></td>
-                        <td><?php echo $f_name; ?></td>
                         <td><?php echo $sec; ?></td>
                         <td><?php echo $sub; ?></td>
                     </tr>
